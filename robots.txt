@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /img/portfolio/
+
+Sitemap: https://friendadmin.ru/sitemap.xml
+
+Host: friendadmin.ru

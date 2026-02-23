@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://friendadmin.ru/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://friendadmin.ru/uslugi/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://friendadmin.ru/razrabotka-sajtov/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://friendadmin.ru/crm-sistemy/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://friendadmin.ru/seo-prodvizhenie/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://friendadmin.ru/it-podderzhka/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://friendadmin.ru/portfolio/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://friendadmin.ru/o-kompanii/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://friendadmin.ru/kontakty/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://friendadmin.ru/politika-konfidentsialnosti/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>
