@@ -330,6 +330,48 @@ if (filterBtns.length) {
   });
 }
 
+// ==================== Portfolio lightbox ====================
+
+var lightbox = document.getElementById('lightbox');
+var lightboxImg = document.getElementById('lightboxImg');
+var lightboxCaption = document.getElementById('lightboxCaption');
+
+if (lightbox) {
+  document.querySelectorAll('.portfolio-card[data-action="lightbox"]').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      e.preventDefault();
+      var src = card.getAttribute('href');
+      var name = card.querySelector('.portfolio-card__name');
+      lightboxImg.src = src;
+      lightboxCaption.textContent = name ? name.textContent : '';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  lightbox.querySelector('.lightbox__close').addEventListener('click', function() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+    lightboxImg.src = '';
+  });
+
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      lightboxImg.src = '';
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      lightboxImg.src = '';
+    }
+  });
+}
+
 // ==================== Section view tracking ====================
 
 var sectionObserver = new IntersectionObserver(function(entries) {
