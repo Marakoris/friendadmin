@@ -308,7 +308,7 @@ if (contactForm) {
 
 // ==================== Portfolio filter ====================
 
-var filterBtns = document.querySelectorAll('.portfolio-filter');
+var filterBtns = document.querySelectorAll('.portfolio-filter__btn');
 if (filterBtns.length) {
   filterBtns.forEach(function(btn) {
     btn.addEventListener('click', function() {
