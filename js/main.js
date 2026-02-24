@@ -336,6 +336,13 @@ var lightbox = document.getElementById('lightbox');
 var lightboxImg = document.getElementById('lightboxImg');
 var lightboxCaption = document.getElementById('lightboxCaption');
 
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  lightbox.scrollTop = 0;
+  document.body.style.overflow = '';
+  lightboxImg.src = '';
+}
+
 if (lightbox) {
   document.querySelectorAll('.portfolio-card[data-action="lightbox"]').forEach(function(card) {
     card.addEventListener('click', function(e) {
@@ -345,30 +352,19 @@ if (lightbox) {
       lightboxImg.src = src;
       lightboxCaption.textContent = name ? name.textContent : '';
       lightbox.classList.add('active');
+      lightbox.scrollTop = 0;
       document.body.style.overflow = 'hidden';
     });
   });
 
-  lightbox.querySelector('.lightbox__close').addEventListener('click', function() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-    lightboxImg.src = '';
-  });
+  lightbox.querySelector('.lightbox__close').addEventListener('click', closeLightbox);
 
   lightbox.addEventListener('click', function(e) {
-    if (e.target === lightbox) {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-      lightboxImg.src = '';
-    }
+    if (e.target === lightbox) closeLightbox();
   });
 
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-      lightboxImg.src = '';
-    }
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
   });
 }
 
