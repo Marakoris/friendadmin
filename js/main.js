@@ -185,6 +185,14 @@ document.querySelectorAll('.faq__question').forEach(function(btn) {
   });
 });
 
+// ==================== Auto fade-in for hero elements ====================
+
+document.querySelectorAll('.hero .hero__title, .hero .hero__subtitle, .hero .hero__sub, .hero .hero__price, .hero .hero__buttons, .hero .hero__note').forEach(function(el) {
+  if (!el.classList.contains('fade-in')) {
+    el.classList.add('fade-in');
+  }
+});
+
 // ==================== Fade-in on scroll ====================
 
 var fadeEls = document.querySelectorAll('.fade-in');
