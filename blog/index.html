@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Блог FriendAdmin — статьи о разработке сайтов, AI-агентах и бизнесе</title>
+  <meta name="description" content="Блог веб-студии FriendAdmin: статьи о создании интернет-магазинов, AI-агентах для бизнеса, SEO-продвижении и автоматизации. Полезные материалы для предпринимателей.">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://friendadmin.ru/blog/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Блог FriendAdmin — статьи о разработке и AI">
+  <meta property="og:description" content="Статьи о создании интернет-магазинов, AI-агентах для бизнеса, SEO-продвижении и автоматизации.">
+  <meta property="og:url" content="https://friendadmin.ru/blog/">
+  <meta property="og:site_name" content="FriendAdmin">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="stylesheet" href="/css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7929EMM00E"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7929EMM00E');</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://friendadmin.ru/"},
+      {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://friendadmin.ru/blog/"}
+    ]
+  }
+  </script>
+  <!-- Yandex.Metrika -->
+  <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(95899715,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/95899715" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+  <style>
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .blog-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s; }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .blog-card img { width: 100%; height: 200px; object-fit: cover; }
+    .blog-card__body { padding: 1.25rem; }
+    .blog-card__date { font-size: 0.85rem; color: #888; margin-bottom: 0.5rem; }
+    .blog-card__title { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.4; }
+    .blog-card__title a { color: #1a1a2e; text-decoration: none; }
+    .blog-card__title a:hover { color: #2563eb; }
+    .blog-card__desc { font-size: 0.95rem; color: #555; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="logo"><img src="/img/favicon.svg" alt="FriendAdmin" class="logo__icon" width="36" height="36"><span class="logo__text">FriendAdmin</span></a>
+      <nav class="nav" id="nav">
+        <a href="/uslugi/" class="nav__link" data-i18n="nav.services">Услуги</a>
+        <a href="/portfolio/" class="nav__link" data-i18n="nav.portfolio">Портфолио</a>
+        <a href="/o-kompanii/" class="nav__link" data-i18n="nav.about">О компании</a>
+        <a href="/kontakty/" class="nav__link" data-i18n="nav.contacts">Контакты</a>
+        <a href="/blog/" class="nav__link">Блог</a>
+      </nav>
+      <div class="lang-switch"><button class="lang-switch__btn active" data-lang="ru">RU</button><button class="lang-switch__btn" data-lang="en">EN</button></div>
+      <a href="/kontakty/" class="btn btn--sm btn--header" data-i18n="nav.cta">Обсудить проект</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="breadcrumb">
+      <div class="container">
+        <ul class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/">Главная</a></li>
+          <li class="breadcrumb__item active">Блог</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="hero hero--sub">
+      <div class="container">
+        <h1 class="hero__title">Блог</h1>
+        <p class="hero__subtitle">Полезные статьи о создании сайтов, AI-агентах и автоматизации бизнеса</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="blog-grid">
+          <div class="blog-card">
+            <a href="/blog/ai-agenty-dlya-biznesa-2026/">
+              <picture>
+                <source srcset="/img/blog/ai-agenty-biznes-avtomatizaciya.webp" type="image/webp">
+                <img src="/img/blog/ai-agenty-biznes-avtomatizaciya.jpg" alt="AI агенты для бизнеса в 2026" width="400" height="200" loading="lazy">
+              </picture>
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date">18 марта 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/ai-agenty-dlya-biznesa-2026/">AI агенты для бизнеса: автоматизация процессов в 2026 году</a></h2>
+              <p class="blog-card__desc">Как AI-агенты помогают бизнесу автоматизировать рутину, снижать расходы и увеличивать продажи. Примеры, стоимость, пошаговое внедрение.</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/skolko-stoit-internet-magazin-2026/">
+              <picture>
+                <source srcset="/img/blog/internet-magazin-stoimost-2026.webp" type="image/webp">
+                <img src="/img/blog/internet-magazin-stoimost-2026.jpg" alt="Сколько стоит интернет-магазин в 2026" width="400" height="200" loading="lazy">
+              </picture>
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date">17 марта 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/skolko-stoit-internet-magazin-2026/">Сколько стоит создать интернет-магазин в 2026 году</a></h2>
+              <p class="blog-card__desc">Полный разбор стоимости создания интернет-магазина: платформы, этапы разработки, тарифы и на чём можно сэкономить.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2 class="cta__title">Нужна разработка?</h2>
+        <p class="cta__text">Оставьте заявку — обсудим ваш проект и подберём оптимальное решение.</p>
+        <a href="/kontakty/" class="btn btn--lg">Обсудить проект</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><div class="footer__logo"><img src="/img/favicon.svg" alt="FriendAdmin" width="28" height="28"><span>FriendAdmin</span></div><p class="footer__desc">Веб-студия полного цикла. Создаём сайты, внедряем CRM, продвигаем бизнес в интернете с 2014 года.</p></div>
+        <div><div class="footer__heading">Услуги</div><div class="footer__links"><a href="/razrabotka-sajtov/">Разработка сайтов</a><a href="/crm-sistemy/">CRM-системы</a><a href="/seo-prodvizhenie/">SEO-продвижение</a><a href="/it-podderzhka/">IT-поддержка</a></div></div>
+        <div><div class="footer__heading">Компания</div><div class="footer__links"><a href="/o-kompanii/">О компании</a><a href="/portfolio/">Портфолио</a><a href="/kontakty/">Контакты</a><a href="/politika-konfidentsialnosti/">Политика конфиденциальности</a></div></div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__copy">&copy; 2014–2026 FriendAdmin. Все права защищены.</div>
+        <div class="footer__socials">
+          <a href="https://t.me/friend_admin" target="_blank" rel="noopener" aria-label="Telegram"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="https://app.aideploy.ru/widget.js" data-agent="007e67f2-d9fd-494c-ac78-1156c5567682"></script>
+</body>
+</html>
