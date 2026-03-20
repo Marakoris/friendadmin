@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аналитика для интернет-магазина на Metabase — дашборды, AI-аналитик, примеры</title>
+  <meta name="description" content="Как настроить аналитику интернет-магазина на Metabase: дашборды продаж, мобильной аналитики, платежей, клиентов. AI-аналитик, оповещения, реальные примеры дашбордов.">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://friendadmin.ru/blog/analitika-dlya-internet-magazina-metabase/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Аналитика для интернет-магазина на Metabase — дашборды, AI-аналитик, примеры">
+  <meta property="og:description" content="Как настроить аналитику интернет-магазина на Metabase: дашборды продаж, мобильной аналитики, платежей. AI-аналитик с рекомендациями.">
+  <meta property="og:url" content="https://friendadmin.ru/blog/analitika-dlya-internet-magazina-metabase/">
+  <meta property="og:site_name" content="FriendAdmin">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image" content="https://friendadmin.ru/img/blog/metabase/metabase-mobile-kpi.jpg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7929EMM00E"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7929EMM00E');</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Аналитика для интернет-магазина на Metabase — дашборды, AI-аналитик, примеры",
+    "description": "Как настроить аналитику интернет-магазина на Metabase: дашборды продаж, мобильной аналитики, платежей, клиентов. AI-аналитик, оповещения.",
+    "image": "https://friendadmin.ru/img/blog/metabase/metabase-mobile-kpi.jpg",
+    "author": {"@type": "Organization", "name": "FriendAdmin", "url": "https://friendadmin.ru/"},
+    "publisher": {"@type": "Organization", "name": "FriendAdmin", "url": "https://friendadmin.ru/", "logo": {"@type": "ImageObject", "url": "https://friendadmin.ru/img/favicon.svg"}},
+    "datePublished": "2026-03-20",
+    "dateModified": "2026-03-20",
+    "mainEntityOfPage": "https://friendadmin.ru/blog/analitika-dlya-internet-magazina-metabase/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://friendadmin.ru/"},
+      {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://friendadmin.ru/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "Аналитика на Metabase", "item": "https://friendadmin.ru/blog/analitika-dlya-internet-magazina-metabase/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Что такое Metabase?", "acceptedAnswer": {"@type": "Answer", "text": "Metabase — open-source BI-платформа для визуализации данных. Подключается к базам данных и позволяет строить дашборды, графики и отчёты без знания SQL. Бесплатная лицензия, можно развернуть на своём сервере."}},
+      {"@type": "Question", "name": "Сколько стоит настройка аналитики на Metabase?", "acceptedAnswer": {"@type": "Answer", "text": "Базовая настройка (1–3 дашборда) — от 40 000 руб. Продвинутая аналитика с AI-аналитиком — от 90 000 руб. Комплексная BI-система — от 180 000 руб. Сам Metabase бесплатный."}},
+      {"@type": "Question", "name": "Какие метрики отслеживать в интернет-магазине?", "acceptedAnswer": {"@type": "Answer", "text": "Ключевые метрики: выручка, средний чек, конверсия (CR), количество заказов, bounce rate, время на сайте, источники трафика, доля мобильных, новые vs возвратные клиенты, статусы платежей, возвраты."}},
+      {"@type": "Question", "name": "Чем Metabase лучше Google Analytics?", "acceptedAnswer": {"@type": "Answer", "text": "Google Analytics показывает только поведение на сайте. Metabase объединяет данные из всех источников: база заказов, CRM, платёжная система, склад. Вы видите полную картину бизнеса, а не только трафик."}},
+      {"@type": "Question", "name": "Что такое AI-аналитик в Metabase?", "acceptedAnswer": {"@type": "Answer", "text": "AI-аналитик — встроенная функция Metabase, которая анализирует графики и таблицы, находит аномалии, выделяет тренды и даёт текстовые рекомендации прямо в дашборде. Помогает принимать решения быстрее."}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Metabase",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.6", "ratingCount": "2100", "bestRating": "5"}
+  }
+  </script>
+  <!-- Yandex.Metrika -->
+  <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(95899715,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/95899715" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+  <style>
+    .article-content { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+    .article-content h1 { font-size: 2rem; line-height: 1.3; margin-bottom: 1rem; }
+    .article-content h2 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-content h3 { font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    .article-content p { line-height: 1.7; margin-bottom: 1rem; color: #333; }
+    .article-content ul, .article-content ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+    .article-content li { line-height: 1.7; margin-bottom: 0.5rem; color: #333; }
+    .article-content figure { margin: 2rem 0; }
+    .article-content figure img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+    .article-content figcaption { text-align: center; color: #888; font-size: 0.9rem; margin-top: 0.5rem; }
+    .article-meta { display: flex; gap: 1.5rem; color: #888; font-size: 0.9rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .faq-block { background: #f8f9fa; border-radius: 12px; padding: 2rem; margin-top: 2rem; }
+    .faq-block h3 { margin-top: 1.5rem; color: #1a1a2e; }
+    .faq-block h3:first-child { margin-top: 0; }
+    .faq-block p { color: #555; }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .feature-card { background: #f8f9fa; border-radius: 8px; padding: 1.25rem; }
+    .feature-card strong { display: block; margin-bottom: 0.5rem; color: #1a1a2e; }
+    .feature-card span { font-size: 0.95rem; color: #555; line-height: 1.5; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+    .comparison-table th, .comparison-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .comparison-table th { background: #f8f9fa; font-weight: 600; color: #1a1a2e; }
+    .comparison-table tr:hover { background: #fafbfc; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="logo"><img src="/img/favicon.svg" alt="FriendAdmin" class="logo__icon" width="36" height="36"><span class="logo__text">FriendAdmin</span></a>
+      <nav class="nav" id="nav">
+        <a href="/uslugi/" class="nav__link">Услуги</a>
+        <a href="/portfolio/" class="nav__link">Портфолио</a>
+        <a href="/o-kompanii/" class="nav__link">О компании</a>
+        <a href="/kontakty/" class="nav__link">Контакты</a>
+        <a href="/blog/" class="nav__link">Блог</a>
+      </nav>
+      <div class="lang-switch"><button class="lang-switch__btn active" data-lang="ru">RU</button><button class="lang-switch__btn" data-lang="en">EN</button></div>
+      <a href="/kontakty/" class="btn btn--sm btn--header">Обсудить проект</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="breadcrumb">
+      <div class="container">
+        <ul class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/">Главная</a></li>
+          <li class="breadcrumb__item"><a href="/blog/">Блог</a></li>
+          <li class="breadcrumb__item active">Аналитика на Metabase</li>
+        </ul>
+      </div>
+    </section>
+
+    <article class="article-content">
+      <div class="article-meta">
+        <span>20 марта 2026</span>
+        <span>FriendAdmin</span>
+        <span>12 мин чтения</span>
+      </div>
+
+      <figure>
+        <picture>
+          <source srcset="/img/blog/metabase/metabase-mobile-kpi.webp" type="image/webp">
+          <img src="/img/blog/metabase/metabase-mobile-kpi.jpg" alt="Дашборд мобильной аналитики интернет-магазина в Metabase" width="800" height="383">
+        </picture>
+        <figcaption>Дашборд мобильной аналитики: KPI, сравнение устройств, bounce rate</figcaption>
+      </figure>
+
+      <h1>Аналитика для интернет-магазина на Metabase: дашборды, AI-аналитик и реальные примеры</h1>
+
+      <p>Большинство владельцев интернет-магазинов знают свою выручку. Некоторые знают средний чек. Единицы видят полную картину: какие каналы приводят самых ценных клиентов, почему мобильный чек в 2 раза ниже десктопного и где именно теряются деньги.</p>
+
+      <p>В этой статье покажем, как мы настроили комплексную аналитику для интернет-магазина на <strong>Metabase</strong> — open-source BI-платформе. Все скриншоты — из реального проекта.</p>
+
+      <h2>Почему не Google Analytics?</h2>
+
+      <p>Google Analytics и Яндекс.Метрика — отличные инструменты для анализа трафика. Но у них есть ограничение: они видят только поведение на сайте.</p>
+
+      <p>Бизнесу нужно больше:</p>
+      <ul>
+        <li><strong>Заказы и платежи</strong> — из базы данных магазина, а не из трекера</li>
+        <li><strong>Статусы оплат</strong> — успешные, возвраты, авторизованные</li>
+        <li><strong>Регистрации по каналам</strong> — SMS, Email, Google, Telegram, Яндекс ID</li>
+        <li><strong>Когорты клиентов</strong> — новые vs возвратные, LTV, частота покупок</li>
+        <li><strong>Данные из CRM</strong> — сделки, воронка, менеджеры</li>
+      </ul>
+
+      <p>Metabase объединяет всё в одном месте. Подключаем базу данных магазина, CRM, платёжную систему — и строим дашборды, которые обновляются автоматически.</p>
+
+      <h2>Дашборд 1: Мобильная аналитика</h2>
+
+      <p>Мобильный трафик в e-commerce давно превышает 50%. Но конверсия и средний чек на мобильных обычно ниже. Важно видеть эту разницу в цифрах.</p>
+
+      <figure>
+        <picture>
+          <source srcset="/img/blog/metabase/metabase-mobile-kpi.webp" type="image/webp">
+          <img src="/img/blog/metabase/metabase-mobile-kpi.jpg" alt="KPI мобильной аналитики в Metabase" width="800" height="383" loading="lazy">
+        </picture>
+        <figcaption>Ключевые метрики mobile за 30 дней: визиты, выручка, заказы, средний чек, CR</figcaption>
+      </figure>
+
+      <p>На верхней панели — KPI-карточки с основными метриками мобильного трафика за 30 дней. Ниже — сравнение bounce rate, времени на сайте и глубины просмотра по устройствам (TV, desktop, mobile, tablet).</p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <strong>Визиты Mobile</strong>
+          <span>44 907 за 30 дней — больше половины всего трафика</span>
+        </div>
+        <div class="feature-card">
+          <strong>Доля новых</strong>
+          <span>68.1% — мобильные пользователи чаще приходят впервые</span>
+        </div>
+        <div class="feature-card">
+          <strong>CR Mobile</strong>
+          <span>0.37% — конверсия ниже десктопа, есть потенциал роста</span>
+        </div>
+      </div>
+
+      <h3>Тренды по месяцам</h3>
+
+      <figure>
+        <picture>
+          <source srcset="/img/blog/metabase/metabase-mobile-trends.webp" type="image/webp">
+          <img src="/img/blog/metabase/metabase-mobile-trends.jpg" alt="Тренды мобильного трафика по месяцам в Metabase" width="800" height="401" loading="lazy">
+        </picture>
+        <figcaption>Выручка Mobile vs Desktop, доля мобильного трафика, bounce rate и время на сайте по месяцам</figcaption>
+      </figure>
+
+      <p>Четыре графика на одном дашборде показывают динамику за год:</p>
+      <ul>
+        <li><strong>Выручка Mobile vs Desktop</strong> — видно, что desktop стабильно обгоняет mobile по выручке, хотя по трафику mobile лидирует</li>
+        <li><strong>Доля мобильного трафика</strong> — колеблется около 50%, с пиком летом</li>
+        <li><strong>Bounce rate</strong> — снижается с 43% до 30% за год (результат оптимизации)</li>
+        <li><strong>Время на сайте</strong> — стабильно 100–120 сек для mobile</li>
+      </ul>
+
+      <h2>Дашборд 2: Технические данные и источники трафика</h2>
+
+      <figure>
+        <picture>
+          <source srcset="/img/blog/metabase/metabase-tech-data.webp" type="image/webp">
+          <img src="/img/blog/metabase/metabase-tech-data.jpg" alt="Технические данные: браузеры, источники трафика, iOS vs Android" width="800" height="401" loading="lazy">
+        </picture>
+        <figcaption>Топ браузеров по отказам, источники трафика (Organic/Ad/Direct/Social), iOS vs Android</figcaption>
+      </figure>
+
+      <p>Этот дашборд помогает техническому отделу и маркетингу:</p>
+      <ul>
+        <li><strong>Топ браузеров</strong> — Chrome Mobile лидирует (16 618 визитов), Mobile Safari показывает самый высокий bounce rate (38.9%)</li>
+        <li><strong>Источники трафика</strong> — Organic 47%, Ad 39%, Direct 14%. Органика — главный канал</li>
+        <li><strong>iOS vs Android</strong> — Android показывает bounce rate 30.7% vs iOS 36.6%, но iOS проигрывает по времени на сайте</li>
+      </ul>
+
+      <p>Такие данные помогают расставить приоритеты: если Safari даёт высокий bounce rate — нужно тестировать и оптимизировать мобильную версию именно под Safari.</p>
+
+      <h2>Дашборд 3: Клиенты и регистрации</h2>
+
+      <figure>
+        <picture>
+          <source srcset="/img/blog/metabase/metabase-auth-stats.webp" type="image/webp">
+          <img src="/img/blog/metabase/metabase-auth-stats.jpg" alt="Дашборд авторизаций и регистраций в Metabase" width="800" height="401" loading="lazy">
+        </picture>
+        <figcaption>Авторизации и регистрации за 7 дней, способы авторизации за 30 дней, email-провайдеры</figcaption>
+      </figure>
+
+      <p>Дашборд клиентской аналитики показывает:</p>
+      <ul>
+        <li><strong>Авторизации за 7 дней</strong> — stacked bar chart с разбивкой по способам (Email, SMS, Google, Telegram, Яндекс ID)</li>
+        <li><strong>Регистрации за 7 дней</strong> — видно, что SMS и Telegram — основные каналы</li>
+        <li><strong>Способы авторизации за 30 дней</strong> — SMS лидирует (440 авторизаций), Email на втором месте</li>
+        <li><strong>Email-провайдеры</strong> — распределение по Mail.ru, Yandex, Gmail, iCloud</li>
+      </ul>
+
+      <p>Эти данные помогают оптимизировать форму регистрации: если SMS — самый популярный способ, стоит вынести его на первое место.</p>
+
+      <h2>Дашборд 4: Платежи и финансы</h2>
+
+      <figure>
+        <picture>
+          <source srcset="/img/blog/metabase/metabase-payments.webp" type="image/webp">
+          <img src="/img/blog/metabase/metabase-payments.jpg" alt="Дашборд платежей интернет-магазина в Metabase" width="800" height="401" loading="lazy">
+        </picture>
+        <figcaption>Чеки, суммы, статусы платежей, динамика по дням</figcaption>
+      </figure>
+
+      <p>Финансовый дашборд — must-have для любого магазина:</p>
+      <ul>
+        <li><strong>KPI-карточки</strong> — количество чеков, общая сумма, статусы (успешно 53%, новый 21%, авторизован 19%, возврат 6%)</li>
+        <li><strong>Динамика чеков по дням</strong> — двойная ось: количество чеков (столбцы) и сумма (линия). Видно корреляцию и выбросы</li>
+      </ul>
+
+      <p>Процент возвратов 6% — нормальный показатель для e-commerce. Но если он растёт — дашборд покажет это сразу, а алерт пришлёт уведомление в Telegram.</p>
+
+      <h2>Дашборд 5: Заказы и выручка за 5 лет</h2>
+
+      <figure>
+        <picture>
+          <source srcset="/img/blog/metabase/metabase-orders-revenue.webp" type="image/webp">
+          <img src="/img/blog/metabase/metabase-orders-revenue.jpg" alt="Заказы и выручка интернет-магазина за 5 лет в Metabase" width="800" height="401" loading="lazy">
+        </picture>
+        <figcaption>Заказы и выручка по месяцам (2021–2026), возвраты, новые клиенты</figcaption>
+      </figure>
+
+      <p>Стратегический дашборд с данными за 5 лет:</p>
+      <ul>
+        <li><strong>Заказы + выручка</strong> — жёлтые столбцы (заказы) и розовая линия (выручка). Видна сезонность, рост, провалы</li>
+        <li><strong>Возвраты по месяцам</strong> — количество и суммы возвратов для контроля качества</li>
+        <li><strong>Новые клиенты</strong> — динамика привлечения: рост с 60 до 200+ в месяц за год</li>
+      </ul>
+
+      <h2>AI-аналитик: рекомендации прямо в дашборде</h2>
+
+      <p>Самая интересная функция Metabase — встроенный <strong>AI-аналитик</strong>. Он автоматически анализирует данные на графиках и даёт текстовые рекомендации.</p>
+
+      <figure>
+        <picture>
+          <source srcset="/img/blog/metabase/metabase-ai-analyst.webp" type="image/webp">
+          <img src="/img/blog/metabase/metabase-ai-analyst.jpg" alt="AI-аналитик в Metabase даёт рекомендации по данным" width="800" height="401" loading="lazy">
+        </picture>
+        <figcaption>AI-аналитик анализирует график и даёт конкретные рекомендации</figcaption>
+      </figure>
+
+      <p>На скриншоте AI-аналитик проанализировал график авторизаций и выдал рекомендации:</p>
+      <ul>
+        <li>Проанализировать причины роста авторизаций 14 и 15 марта — возможно, маркетинговые кампании</li>
+        <li>Оптимизировать процесс авторизации через Google и Telegram</li>
+        <li>Улучшить стабильность Яндекс ID</li>
+        <li>Рассмотреть A/B тестирование форм авторизации</li>
+      </ul>
+
+      <figure>
+        <picture>
+          <source srcset="/img/blog/metabase/metabase-ai-analysis.webp" type="image/webp">
+          <img src="/img/blog/metabase/metabase-ai-analysis.jpg" alt="AI-анализ данных: устройства, проблемы, рекомендации" width="800" height="401" loading="lazy">
+        </picture>
+        <figcaption>AI-анализ: мобильный чек в 2 раза ниже десктопа — AI объясняет почему и что делать</figcaption>
+      </figure>
+
+      <p>Ещё один пример AI-анализа — сравнение устройств. AI нашёл проблему: <strong>мобильный средний чек (13 340 руб.) в 2 раза ниже десктопного (26 368 руб.)</strong>. И сразу предложил решения:</p>
+      <ol>
+        <li><strong>Улучшить мобильную версию</strong> — потенциал +1.5 млн руб./мес при выравнивании чека</li>
+        <li>Проанализировать checkout-процесс на мобильных</li>
+        <li>Оптимизировать карточки дорогих товаров для мобильных</li>
+      </ol>
+
+      <p>AI-аналитик не заменяет аналитика, но значительно ускоряет работу: вместо того чтобы самому искать паттерны в данных, вы получаете готовые выводы и рекомендации.</p>
+
+      <h2>Metabase vs конкуренты</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Параметр</th>
+          <th>Metabase</th>
+          <th>Google Looker Studio</th>
+          <th>Power BI</th>
+          <th>Tableau</th>
+        </tr>
+        <tr>
+          <td>Лицензия</td>
+          <td><strong>Бесплатно (open-source)</strong></td>
+          <td>Бесплатно</td>
+          <td>от $10/мес за юзера</td>
+          <td>от $70/мес за юзера</td>
+        </tr>
+        <tr>
+          <td>Свой сервер</td>
+          <td><strong>Да</strong></td>
+          <td>Нет (облако Google)</td>
+          <td>Облако или on-premise</td>
+          <td>Облако или on-premise</td>
+        </tr>
+        <tr>
+          <td>SQL-запросы</td>
+          <td><strong>Да, нативно</strong></td>
+          <td>Ограниченно</td>
+          <td>DAX (свой язык)</td>
+          <td>VizQL (свой язык)</td>
+        </tr>
+        <tr>
+          <td>AI-аналитик</td>
+          <td><strong>Да, встроенный</strong></td>
+          <td>Gemini (базовый)</td>
+          <td>Copilot (платный)</td>
+          <td>Pulse (платный)</td>
+        </tr>
+        <tr>
+          <td>Подключение к БД</td>
+          <td><strong>Прямое</strong></td>
+          <td>Через коннекторы</td>
+          <td>Через шлюз</td>
+          <td>Через коннекторы</td>
+        </tr>
+        <tr>
+          <td>Простота</td>
+          <td><strong>Высокая</strong></td>
+          <td>Средняя</td>
+          <td>Средняя</td>
+          <td>Низкая</td>
+        </tr>
+        <tr>
+          <td>Конфиденциальность</td>
+          <td><strong>Данные на вашем сервере</strong></td>
+          <td>Данные в Google</td>
+          <td>Данные в Microsoft</td>
+          <td>Данные в Salesforce</td>
+        </tr>
+      </table>
+
+      <p>Главные преимущества Metabase для малого и среднего бизнеса:</p>
+      <ul>
+        <li><strong>Бесплатно</strong> — нет лицензионных платежей, платите только за хостинг (от 1 000 руб./мес)</li>
+        <li><strong>Данные на вашем сервере</strong> — полная конфиденциальность, ничего не уходит в облако</li>
+        <li><strong>Прямое подключение к БД</strong> — нет посредников, данные обновляются в реальном времени</li>
+        <li><strong>AI-аналитик включён</strong> — не нужно доплачивать, работает из коробки</li>
+      </ul>
+
+      <h2>Какие метрики отслеживать в интернет-магазине</h2>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <strong>Выручка и заказы</strong>
+          <span>По дням, неделям, месяцам. Средний чек, медиана, динамика.</span>
+        </div>
+        <div class="feature-card">
+          <strong>Конверсия (CR)</strong>
+          <span>Общая, по устройствам, по источникам трафика, по категориям.</span>
+        </div>
+        <div class="feature-card">
+          <strong>Источники трафика</strong>
+          <span>Organic, Ad, Direct, Social. ROI каждого канала.</span>
+        </div>
+        <div class="feature-card">
+          <strong>Мобильные метрики</strong>
+          <span>Доля mobile, bounce rate, время на сайте, CR по устройствам.</span>
+        </div>
+        <div class="feature-card">
+          <strong>Клиенты</strong>
+          <span>Новые vs возвратные, LTV, когорты, способы регистрации.</span>
+        </div>
+        <div class="feature-card">
+          <strong>Платежи</strong>
+          <span>Статусы, возвраты, средний чек, динамика. Алерты при аномалиях.</span>
+        </div>
+      </div>
+
+      <h2>Сколько стоит настройка</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Пакет</th>
+          <th>Что входит</th>
+          <th>Стоимость</th>
+          <th>Срок</th>
+        </tr>
+        <tr>
+          <td><strong>Базовый</strong></td>
+          <td>1–3 дашборда, 1 источник данных, развёртывание Metabase</td>
+          <td>от 40 000 руб.</td>
+          <td>от 5 дней</td>
+        </tr>
+        <tr>
+          <td><strong>Продвинутый</strong></td>
+          <td>5–10 дашбордов, 2–3 источника, AI-аналитик, ETL, алерты</td>
+          <td>от 90 000 руб.</td>
+          <td>от 10 дней</td>
+        </tr>
+        <tr>
+          <td><strong>Комплексный</strong></td>
+          <td>Неограниченно дашбордов, любые источники, ролевой доступ, автоматизация</td>
+          <td>от 180 000 руб.</td>
+          <td>от 3 недель</td>
+        </tr>
+      </table>
+
+      <p>Сам Metabase бесплатный. Для хостинга достаточно VPS от 1 000 руб./мес. Итого стоимость владения — минимальная по сравнению с коммерческими BI-решениями.</p>
+
+      <h2>FAQ</h2>
+
+      <div class="faq-block">
+        <h3>Что такое Metabase?</h3>
+        <p>Open-source BI-платформа для визуализации данных. Подключается к базам данных и позволяет строить дашборды, графики и отчёты без знания SQL. Бесплатная лицензия, можно развернуть на своём сервере.</p>
+
+        <h3>Чем Metabase лучше Google Analytics?</h3>
+        <p>Google Analytics показывает только поведение на сайте. Metabase объединяет данные из всех источников: база заказов, CRM, платёжная система, склад. Вы видите полную картину бизнеса, а не только трафик.</p>
+
+        <h3>Какие метрики самые важные для интернет-магазина?</h3>
+        <p>Выручка, средний чек, конверсия (CR), количество заказов, bounce rate, время на сайте, источники трафика, доля мобильных, новые vs возвратные клиенты, статусы платежей, возвраты.</p>
+
+        <h3>Нужен ли программист для работы с Metabase?</h3>
+        <p>Нет. Мы настраиваем всё под ключ: подключаем данные, создаём дашборды, настраиваем фильтры. Руководители и менеджеры работают с готовыми дашбордами через простой веб-интерфейс.</p>
+
+        <h3>Что такое AI-аналитик?</h3>
+        <p>Встроенная функция Metabase, которая анализирует графики и таблицы, находит аномалии, выделяет тренды и даёт текстовые рекомендации прямо в дашборде. Помогает принимать решения быстрее.</p>
+      </div>
+
+      <div style="margin-top:2.5rem;padding:2rem;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:12px;text-align:center;">
+        <h2 style="color:#fff;margin:0 0 0.5rem;">Хотите такую аналитику?</h2>
+        <p style="color:rgba(255,255,255,0.9);margin:0 0 1.5rem;">Покажем демо, обсудим ваши метрики и подберём оптимальный пакет.</p>
+        <a href="/analitika-dlya-biznesa/" style="display:inline-block;padding:0.8rem 2rem;background:#fff;color:#764ba2;border-radius:8px;text-decoration:none;font-weight:600;">Подробнее об услуге</a>
+        <a href="/kontakty/" style="display:inline-block;padding:0.8rem 2rem;background:rgba(255,255,255,0.15);color:#fff;border:2px solid rgba(255,255,255,0.5);border-radius:8px;text-decoration:none;font-weight:600;margin-left:1rem;">Обсудить проект</a>
+      </div>
+    </article>
+
+    <section class="cta">
+      <div class="container">
+        <h2 class="cta__title">Нужна аналитика для бизнеса?</h2>
+        <p class="cta__text">Оставьте заявку — покажем демо-дашборд и обсудим, какие метрики важны для вашего бизнеса.</p>
+        <a href="/kontakty/" class="btn btn--lg">Обсудить проект</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><div class="footer__logo"><img src="/img/favicon.svg" alt="FriendAdmin" width="28" height="28"><span>FriendAdmin</span></div><p class="footer__desc">Веб-студия полного цикла. Создаём сайты, внедряем CRM, продвигаем бизнес в интернете с 2014 года.</p></div>
+        <div><div class="footer__heading">Услуги</div><div class="footer__links"><a href="/razrabotka-sajtov/">Разработка сайтов</a><a href="/crm-sistemy/">CRM-системы</a><a href="/seo-prodvizhenie/">SEO-продвижение</a><a href="/it-podderzhka/">IT-поддержка</a></div></div>
+        <div><div class="footer__heading">Компания</div><div class="footer__links"><a href="/o-kompanii/">О компании</a><a href="/portfolio/">Портфолио</a><a href="/kontakty/">Контакты</a><a href="/politika-konfidentsialnosti/">Политика конфиденциальности</a></div></div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__copy">&copy; 2014–2026 FriendAdmin. Все права защищены.</div>
+        <div class="footer__socials">
+          <a href="https://t.me/friend_admin" target="_blank" rel="noopener" aria-label="Telegram"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="https://app.aideploy.ru/widget.js" data-agent="007e67f2-d9fd-494c-ac78-1156c5567682"></script>
+</body>
+</html>
