@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BillPilot Demo — автоматизация биллинга | FriendAdmin</title>
+    <meta name="description" content="Демо-дашборд BillPilot — система автоматизации биллинга для IT-компаний. Мониторинг подписок, автогенерация счетов, задачи в CRM.">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+        .demo-banner { background: linear-gradient(135deg, #1e40af, #7c3aed); padding: 12px 24px; text-align: center; font-size: 14px; font-weight: 500; }
+        .demo-banner a { color: #93c5fd; text-decoration: underline; }
+        h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        h1 span { color: #38bdf8; }
+        .subtitle { color: #94a3b8; font-size: 14px; margin-bottom: 32px; }
+        h2 { font-size: 18px; font-weight: 600; margin: 32px 0 16px; color: #cbd5e1; }
+
+        /* Stats bar */
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px; }
+        .stat-card { background: #1e293b; border-radius: 12px; padding: 20px; border: 1px solid #334155; text-align: center; }
+        .stat-value { font-size: 36px; font-weight: 700; color: #38bdf8; }
+        .stat-label { font-size: 13px; color: #94a3b8; margin-top: 4px; }
+
+        /* Subscriptions table */
+        .subs-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        .subs-table th { text-align: left; padding: 10px 14px; font-size: 12px; color: #64748b; font-weight: 600; text-transform: uppercase; border-bottom: 1px solid #334155; }
+        .subs-table td { padding: 10px 14px; font-size: 14px; border-bottom: 1px solid #1e293b; }
+        .subs-table tr:hover td { background: #1e293b; }
+
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+        .badge-ok { background: #065f46; color: #6ee7b7; }
+        .badge-warn { background: #713f12; color: #fde68a; }
+        .badge-crit { background: #7f1d1d; color: #fca5a5; }
+        .badge-expired { background: #581c87; color: #d8b4fe; }
+
+        /* Jobs */
+        .jobs { display: grid; gap: 12px; }
+        .job-card { background: #1e293b; border-radius: 12px; padding: 16px 20px; border: 1px solid #334155; display: flex; justify-content: space-between; align-items: center; }
+        .job-title { font-size: 15px; font-weight: 600; }
+        .job-desc { color: #94a3b8; font-size: 13px; }
+        .job-right { text-align: right; font-size: 13px; }
+        .job-time { color: #94a3b8; }
+
+        /* Alerts feed */
+        .alerts { display: flex; flex-direction: column; gap: 12px; }
+        .alert-item { background: #1e293b; border-radius: 12px; padding: 16px 20px; border-left: 4px solid #f59e0b; }
+        .alert-item.critical { border-left-color: #ef4444; }
+        .alert-item.info { border-left-color: #3b82f6; }
+        .alert-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
+        .alert-title { font-weight: 600; font-size: 14px; }
+        .alert-time { color: #64748b; font-size: 12px; }
+        .alert-body { color: #94a3b8; font-size: 13px; line-height: 1.5; }
+        .alert-actions { margin-top: 8px; display: flex; gap: 8px; }
+        .alert-btn { padding: 4px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; border: none; }
+        .alert-btn-primary { background: #2563eb; color: white; }
+        .alert-btn-secondary { background: #334155; color: #e2e8f0; }
+
+        /* Invoice preview */
+        .invoice-preview { background: white; color: #1e293b; border-radius: 12px; padding: 24px; max-width: 500px; font-size: 13px; line-height: 1.6; }
+        .invoice-preview h3 { font-size: 16px; margin-bottom: 12px; color: #0f172a; }
+        .invoice-preview .inv-header { display: flex; justify-content: space-between; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid #e2e8f0; }
+        .invoice-preview table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+        .invoice-preview td, .invoice-preview th { padding: 6px 8px; text-align: left; border-bottom: 1px solid #f1f5f9; }
+        .invoice-preview .total { font-size: 16px; font-weight: 700; text-align: right; margin-top: 8px; }
+        .invoice-preview .stamp { color: #2563eb; font-weight: 600; border: 2px solid #2563eb; border-radius: 8px; padding: 4px 12px; display: inline-block; margin-top: 12px; transform: rotate(-5deg); }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+
+        .footer { margin-top: 48px; text-align: center; color: #475569; font-size: 12px; padding: 24px 0; }
+        .footer a { color: #38bdf8; text-decoration: none; }
+
+        .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
+    </style>
+</head>
+<body>
+    <div class="demo-banner">
+        📺 Это демо-версия BillPilot с тестовыми данными. <a href="/razrabotka-sajtov/avtomatizaciya-billinga/">Узнать подробнее</a> или <a href="/kontakty/">оставить заявку</a>
+    </div>
+
+    <div class="container">
+        <h1>🤖 <span>BillPilot</span></h1>
+        <div class="subtitle">Автоматизация биллинга и мониторинг подписок • Демо-режим • 05.04.2026 14:30</div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value">47</div>
+                <div class="stat-label">Подписок на мониторинге</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">12</div>
+                <div class="stat-label">Клиентов</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">186</div>
+                <div class="stat-label">Счетов выставлено</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" style="color: #f59e0b;">3</div>
+                <div class="stat-label">Требуют внимания</div>
+            </div>
+        </div>
+
+        <!-- Alerts -->
+        <h2>🔔 Последние алерты</h2>
+        <div class="alerts">
+            <div class="alert-item critical">
+                <div class="alert-header">
+                    <span class="alert-title">🔴 Wazzup24 — WhatsApp канал истекает через 2 дня</span>
+                    <span class="alert-time">Сегодня, 10:03</span>
+                </div>
+                <div class="alert-body">
+                    <strong>Клиент:</strong> ООО "АвтоСервис Люкс" • <strong>Канал:</strong> WhatsApp Business (+7 916 ***-**-42)<br>
+                    <strong>Тариф:</strong> Pro, 6 мес • <strong>Истекает:</strong> 07.04.2026 • <strong>Стоимость продления:</strong> 14 940 ₽
+                </div>
+                <div class="alert-actions">
+                    <button class="alert-btn alert-btn-primary" onclick="alert('Демо: счёт #187 отправлен клиенту')">📄 Отправить счёт</button>
+                    <button class="alert-btn alert-btn-secondary" onclick="alert('Демо: задача создана в Bitrix24')">📋 Задача в Bitrix24</button>
+                </div>
+            </div>
+            <div class="alert-item">
+                <div class="alert-header">
+                    <span class="alert-title">🟡 Яндекс.Директ — баланса хватит на 5 дней</span>
+                    <span class="alert-time">Сегодня, 09:15</span>
+                </div>
+                <div class="alert-body">
+                    <strong>Клиент:</strong> ИП Петров С.А. • <strong>Баланс:</strong> 12 450 ₽ • <strong>Расход:</strong> ~2 340 ₽/день<br>
+                    <strong>Рекомендация:</strong> пополнить на 50 000 ₽
+                </div>
+                <div class="alert-actions">
+                    <button class="alert-btn alert-btn-primary" onclick="alert('Демо: счёт на 50 000₽ сгенерирован')">📄 Выставить счёт на 50 000 ₽</button>
+                </div>
+            </div>
+            <div class="alert-item info">
+                <div class="alert-header">
+                    <span class="alert-title">📨 Входящий счёт от Diginetica</span>
+                    <span class="alert-time">Вчера, 14:22</span>
+                </div>
+                <div class="alert-body">
+                    <strong>Счёт №2718</strong> от 01.04.2026 на сумму <strong>8 500 ₽</strong> • Поисковый сервис для сайта<br>
+                    PDF переслан в Telegram, задача создана в Bitrix24
+                </div>
+                <div class="alert-actions">
+                    <button class="alert-btn alert-btn-secondary" onclick="alert('Демо: открыть PDF счёта')">📎 Открыть PDF</button>
+                    <button class="alert-btn alert-btn-secondary" onclick="alert('Демо: отметить как оплачено')">✅ Оплачено</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-2" style="margin-top: 32px;">
+            <div>
+                <!-- Subscriptions -->
+                <h2>📋 Подписки клиентов</h2>
+                <table class="subs-table">
+                    <thead>
+                        <tr><th>Клиент</th><th>Сервис</th><th>Истекает</th><th>Статус</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>АвтоСервис Люкс</td><td>Wazzup WhatsApp</td><td>07.04.2026</td><td><span class="badge badge-crit">2 дня</span></td></tr>
+                        <tr><td>АвтоСервис Люкс</td><td>Wazzup Telegram</td><td>15.04.2026</td><td><span class="badge badge-warn">10 дней</span></td></tr>
+                        <tr><td>Клиника "Здоровье"</td><td>Bitrix24 Проф.</td><td>12.06.2026</td><td><span class="badge badge-ok">68 дней</span></td></tr>
+                        <tr><td>Клиника "Здоровье"</td><td>Wazzup WhatsApp</td><td>20.04.2026</td><td><span class="badge badge-warn">15 дней</span></td></tr>
+                        <tr><td>ИП Петров С.А.</td><td>amoCRM Базовый</td><td>01.09.2026</td><td><span class="badge badge-ok">149 дней</span></td></tr>
+                        <tr><td>ИП Петров С.А.</td><td>Яндекс.Директ</td><td>—</td><td><span class="badge badge-warn">5 дн. баланса</span></td></tr>
+                        <tr><td>Салон "Бьюти"</td><td>Wazzup Instagram</td><td>03.05.2026</td><td><span class="badge badge-ok">28 дней</span></td></tr>
+                        <tr><td>Салон "Бьюти"</td><td>Wazzup WhatsApp</td><td>03.05.2026</td><td><span class="badge badge-ok">28 дней</span></td></tr>
+                        <tr><td>ООО "Мебель+"</td><td>Bitrix24 Стандарт.</td><td>15.08.2026</td><td><span class="badge badge-ok">132 дня</span></td></tr>
+                        <tr><td>ООО "Мебель+"</td><td>SMS.ru</td><td>—</td><td><span class="badge badge-ok">8 420 ₽</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <!-- Auto-generated invoice preview -->
+                <h2>📄 Последний счёт</h2>
+                <div class="invoice-preview">
+                    <div class="inv-header">
+                        <div><strong>Счёт-оферта № 186</strong><br>от 04.04.2026</div>
+                        <div style="text-align:right"><strong>ИП Железкин М.Г.</strong><br>ИНН 321801214913</div>
+                    </div>
+                    <table>
+                        <tr><th>Услуга</th><th>Период</th><th>Сумма</th></tr>
+                        <tr><td>Wazzup24 WhatsApp Business<br><small style="color:#64748b">Pro, канал +7 916 ***-**-42</small></td><td>6 мес</td><td>14 940 ₽</td></tr>
+                    </table>
+                    <div class="total">Итого: 14 940 ₽</div>
+                    <p style="margin-top:12px; font-size:12px; color:#64748b;">Оплата данного счёта является акцептом оферты.<br>Р/с 40802810000001494508 • АО «ТИНЬКОФФ БАНК» • БИК 044525974</p>
+                    <div class="stamp">✓ Автоматически сгенерирован</div>
+                </div>
+
+                <!-- Jobs status -->
+                <h2 style="margin-top:32px">⚡ Задачи мониторинга</h2>
+                <div class="jobs">
+                    <div class="job-card">
+                        <div><div class="job-title">📋 Wazzup24</div><div class="job-desc">30 каналов • 12 клиентов</div></div>
+                        <div class="job-right"><span class="badge badge-ok">✓ OK</span><div class="job-time">10:03</div></div>
+                    </div>
+                    <div class="job-card">
+                        <div><div class="job-title">💰 Яндекс.Директ</div><div class="job-desc">Баланс + расход/день</div></div>
+                        <div class="job-right"><span class="badge badge-ok">✓ OK</span><div class="job-time">09:15</div></div>
+                    </div>
+                    <div class="job-card">
+                        <div><div class="job-title">🔑 Bitrix24</div><div class="job-desc">Лицензии • 5 клиентов</div></div>
+                        <div class="job-right"><span class="badge badge-ok">✓ OK</span><div class="job-time">10:32</div></div>
+                    </div>
+                    <div class="job-card">
+                        <div><div class="job-title">🛒 amoCRM</div><div class="job-desc">Подписки • 3 аккаунта</div></div>
+                        <div class="job-right"><span class="badge badge-ok">✓ OK</span><div class="job-time">11:01</div></div>
+                    </div>
+                    <div class="job-card">
+                        <div><div class="job-title">📨 Gmail → Счета</div><div class="job-desc">Diginetica, UIS, AdminVPS</div></div>
+                        <div class="job-right"><span class="badge badge-ok">✓ OK</span><div class="job-time">08:05</div></div>
+                    </div>
+                    <div class="job-card">
+                        <div><div class="job-title">📱 SMS.ru</div><div class="job-desc">Баланс рассылок</div></div>
+                        <div class="job-right"><span class="badge badge-ok">✓ OK</span><div class="job-time">09:31</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>BillPilot — автоматизация биллинга для IT-компаний</p>
+            <p style="margin-top:8px"><a href="/razrabotka-sajtov/avtomatizaciya-billinga/">Подробнее об услуге</a> • <a href="/kontakty/">Оставить заявку</a> • <a href="/">FriendAdmin</a></p>
+        </div>
+    </div>
+</body>
+</html>
