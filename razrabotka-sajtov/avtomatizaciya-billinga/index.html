@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Автоматизация биллинга для IT-компаний — мониторинг подписок и счета | FriendAdmin</title>
+  <meta name="description" content="Автоматизация биллинга IT-компаний: мониторинг SaaS-подписок клиентов, автоматическое выставление счетов-оферт, задачи в Bitrix24, алерты в Telegram. От 10 000 руб./мес.">
+  <meta name="keywords" content="автоматизация биллинга, мониторинг подписок, автоматическое выставление счетов, контроль подписок SaaS, BillPilot, биллинг IT компания">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://friendadmin.ru/razrabotka-sajtov/avtomatizaciya-billinga/">
+  <link rel="alternate" hreflang="ru" href="https://friendadmin.ru/razrabotka-sajtov/avtomatizaciya-billinga/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Автоматизация биллинга для IT-компаний — мониторинг подписок и счета | FriendAdmin">
+  <meta property="og:description" content="Бот-автоматизатор для IT-агентств: мониторинг 30+ SaaS-подписок, автогенерация счетов, задачи в CRM, алерты в Telegram. Экономия 4-6 часов в неделю.">
+  <meta property="og:url" content="https://friendadmin.ru/razrabotka-sajtov/avtomatizaciya-billinga/">
+  <meta property="og:site_name" content="FriendAdmin">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Автоматизация биллинга для IT-компаний">
+  <meta name="twitter:description" content="Мониторинг SaaS-подписок, автогенерация счетов-оферт, задачи в Bitrix24, алерты в Telegram.">
+  <link rel="stylesheet" href="/css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7929EMM00E"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7929EMM00E');</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Автоматизация биллинга для IT-компаний",
+    "description": "Бот-автоматизатор для IT-агентств и веб-студий: мониторинг SaaS-подписок клиентов, автоматическое выставление счетов-оферт, создание задач в Bitrix24, алерты в Telegram.",
+    "provider": {
+      "@type": "Organization",
+      "name": "FriendAdmin",
+      "url": "https://friendadmin.ru/",
+      "telephone": "+79611048319",
+      "address": {"@type": "PostalAddress", "addressLocality": "Москва", "addressCountry": "RU"}
+    },
+    "areaServed": {"@type": "Country", "name": "Россия"},
+    "offers": [
+      {"@type": "Offer", "name": "Базовый", "priceCurrency": "RUB", "price": "10000", "description": "До 20 подписок, 3 сервиса, Telegram-алерты"},
+      {"@type": "Offer", "name": "Бизнес", "priceCurrency": "RUB", "price": "25000", "description": "До 100 подписок, все сервисы, CRM-интеграция, счета-оферты"},
+      {"@type": "Offer", "name": "Корпоративный", "priceCurrency": "RUB", "price": "50000", "description": "Безлимит подписок, кастомные интеграции, дашборд, приоритетная поддержка"}
+    ],
+    "serviceType": "Автоматизация биллинга"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://friendadmin.ru/"},
+      {"@type": "ListItem", "position": 2, "name": "Разработка сайтов", "item": "https://friendadmin.ru/razrabotka-sajtov/"},
+      {"@type": "ListItem", "position": 3, "name": "Автоматизация биллинга", "item": "https://friendadmin.ru/razrabotka-sajtov/avtomatizaciya-billinga/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Какие сервисы поддерживает система?", "acceptedAnswer": {"@type": "Answer", "text": "Wazzup24, Bitrix24, amoCRM, Яндекс.Директ, SMS.ru, AIDeploy, а также любые сервисы с личным кабинетом — подключаем через Playwright (headless-браузер) или API."}},
+      {"@type": "Question", "name": "Как работает мониторинг без API?", "acceptedAnswer": {"@type": "Answer", "text": "Для сервисов без API мы используем Playwright — headless-браузер, который логинится в личный кабинет, перехватывает данные и парсит информацию о подписках. Поддерживается 2FA через TOTP."}},
+      {"@type": "Question", "name": "Куда приходят алерты?", "acceptedAnswer": {"@type": "Answer", "text": "Алерты с прикреплённым счётом-офертой отправляются в Telegram. Параллельно создаётся задача в Bitrix24 или amoCRM с дедлайном и ответственным менеджером."}},
+      {"@type": "Question", "name": "Счета генерируются автоматически?", "acceptedAnswer": {"@type": "Answer", "text": "Да, система генерирует счета-оферты из шаблона DOCX с вашими реквизитами, автоинкрементным номером и электронной подписью. Счёт прикрепляется к алерту в Telegram и к задаче в CRM."}},
+      {"@type": "Question", "name": "Сколько стоит внедрение?", "acceptedAnswer": {"@type": "Answer", "text": "Внедрение — от 50 000 руб. разово (настройка интеграций, шаблоны счетов, подключение сервисов). Поддержка — от 10 000 руб./мес (мониторинг, обновления, добавление новых сервисов)."}}
+    ]
+  }
+  </script>
+  <!-- Yandex.Metrika -->
+  <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(95899715,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/95899715" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+</head>
+<body data-page="avtomatizaciya-billinga">
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="logo"><img src="/img/favicon.svg" alt="FriendAdmin" class="logo__icon" width="36" height="36"><span class="logo__text">FriendAdmin</span></a>
+      <nav class="nav" id="nav">
+        <a href="/uslugi/" class="nav__link" data-i18n="nav.services">Услуги</a>
+        <a href="/portfolio/" class="nav__link" data-i18n="nav.portfolio">Портфолио</a>
+        <a href="/o-kompanii/" class="nav__link" data-i18n="nav.about">О компании</a>
+        <a href="/kontakty/" class="nav__link" data-i18n="nav.contacts">Контакты</a>
+        <a href="/blog/" class="nav__link">Блог</a>
+      </nav>
+      <div class="lang-switch"><button class="lang-switch__btn active" data-lang="ru">RU</button><button class="lang-switch__btn" data-lang="en">EN</button></div>
+      <a href="/kontakty/" class="btn btn--sm btn--header" data-i18n="nav.cta">Обсудить проект</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="breadcrumb">
+      <div class="container">
+        <ul class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/">Главная</a></li>
+          <li class="breadcrumb__item"><a href="/razrabotka-sajtov/">Разработка сайтов</a></li>
+          <li class="breadcrumb__item active">Автоматизация биллинга</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="hero hero--sub">
+      <div class="container">
+        <h1 class="hero__title">Автоматизация биллинга для IT-компаний</h1>
+        <p class="hero__subtitle">Бот, который каждый день проверяет подписки ваших клиентов, генерирует счета-оферты и создаёт задачи в CRM. Вы перестаёте заходить в личные кабинеты вручную — всё приходит в Telegram.</p>
+        <p class="hero__price">от 10 000 &#8381;/мес</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Проблема</h2>
+        <p class="section__desc">IT-компания обслуживает 15-50 клиентов. Каждый использует 2-5 SaaS-сервисов: Wazzup24, Bitrix24, amoCRM, Яндекс.Директ, хостинг, телефонию. Итого 30-200 подписок, которые нужно проверять, продлевать и перевыставлять счета клиентам.</p>
+        <p class="section__desc">Менеджер тратит <strong>4-6 часов в неделю</strong> на ручную работу: заходит в каждый личный кабинет, смотрит даты окончания, создаёт счёт в Word, отправляет клиенту, ставит задачу в CRM. Пропускает сроки — клиент остаётся без WhatsApp-канала на выходных. Забывает выставить счёт — компания теряет деньги.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Что мониторим</h2>
+        <p class="section__desc">Подключаем все SaaS-сервисы, которыми пользуются ваши клиенты. Для сервисов без API используем Playwright — headless-браузер, который логинится в личный кабинет как живой человек.</p>
+        <div class="niches">
+          <div class="niches__item">
+            <h3>Wazzup24</h3>
+            <p>Мониторинг всех каналов: WhatsApp, Telegram, Instagram, VK, Avito, Viber. Отслеживаем сроки подписок, тарифы, даты окончания. Алерт за 10 дней, критический — за 3 дня. Автоматическая генерация счёта с учётом партнёрской скидки 35%.</p>
+          </div>
+          <div class="niches__item">
+            <h3>Яндекс.Директ</h3>
+            <p>Баланс рекламного кабинета, средний расход в день, прогноз «хватит на N дней». Алерт когда баланса осталось на 7 дней или менее. Месячный отчёт расходов автоматически выгружается в Google Sheets.</p>
+          </div>
+          <div class="niches__item">
+            <h3>Bitrix24</h3>
+            <p>Лицензии клиентов через партнёрский кабинет partners24. Даты окончания, тарифы, стоимость продления. Поддержка обязательной двухфакторной авторизации (TOTP-код генерируется программно).</p>
+          </div>
+          <div class="niches__item">
+            <h3>amoCRM</h3>
+            <p>Подписки клиентских аккаунтов, тарифы, сроки. Мониторинг через партнёрский кабинет с автоматическим логином.</p>
+          </div>
+          <div class="niches__item">
+            <h3>SMS.ru и телефония</h3>
+            <p>Баланс SMS-рассылок, баланс телефонии (UIS/Новосистем). Алерт при низком балансе с рекомендацией суммы пополнения.</p>
+          </div>
+          <div class="niches__item">
+            <h3>Входящие счета (Gmail)</h3>
+            <p>Автоматический мониторинг почты: находит входящие счета от поставщиков (хостинг, Diginetica, телефония), пересылает PDF в Telegram и создаёт задачу «оплатить» в CRM.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Как это работает</h2>
+        <p class="section__desc">Полный цикл от мониторинга до задачи в CRM — без участия человека.</p>
+        <div class="steps">
+          <div class="steps__item">
+            <div class="steps__number">1</div>
+            <h3 class="steps__title">Ежедневная проверка</h3>
+            <p class="steps__text">Каждый день в 10:00 бот логинится в личные кабинеты всех сервисов. Для сервисов с API — запрашивает данные напрямую. Для остальных — использует Playwright (headless-браузер) с поддержкой 2FA.</p>
+          </div>
+          <div class="steps__item">
+            <div class="steps__number">2</div>
+            <h3 class="steps__title">Классификация</h3>
+            <p class="steps__text">Подписки делятся по срочности: истекшие, критические (&#8804;3 дня), предупреждение (&#8804;10 дней), в порядке. Балансы — по прогнозу дней до нуля. Система помнит, о чём уже предупреждала — не дублирует алерты.</p>
+          </div>
+          <div class="steps__item">
+            <div class="steps__number">3</div>
+            <h3 class="steps__title">Счёт-оферта</h3>
+            <p class="steps__text">Для подписок в зоне предупреждения автоматически генерируется счёт-оферта: DOCX из шаблона с реквизитами, автоинкрементным номером, суммой и электронной подписью. Номер счёта ведётся непрерывно.</p>
+          </div>
+          <div class="steps__item">
+            <div class="steps__number">4</div>
+            <h3 class="steps__title">Алерт + задача</h3>
+            <p class="steps__text">В Telegram приходит сообщение с деталями и прикреплённым счётом. Параллельно создаётся задача в Bitrix24 с дедлайном, ответственным менеджером и наблюдателем. Осталось только переслать счёт клиенту.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Сравнение: автоматизация vs ручная работа</h2>
+        <div class="price-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Параметр</th>
+                <th>BillPilot</th>
+                <th>Ручная проверка</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Время на проверку 30 подписок</td>
+                <td>2 минуты (автоматически)</td>
+                <td>4-6 часов в неделю</td>
+              </tr>
+              <tr>
+                <td>Пропущенные подписки</td>
+                <td>0 — проверяется каждый день</td>
+                <td>2-3 в месяц (человеческий фактор)</td>
+              </tr>
+              <tr>
+                <td>Генерация счёта</td>
+                <td>Автоматически с реквизитами и подписью</td>
+                <td>15-20 минут вручную в Word</td>
+              </tr>
+              <tr>
+                <td>Задача в CRM</td>
+                <td>Создаётся автоматически с дедлайном</td>
+                <td>Забывается в 30% случаев</td>
+              </tr>
+              <tr>
+                <td>Контроль балансов</td>
+                <td>Ежедневно с прогнозом</td>
+                <td>Раз в неделю «когда вспомнят»</td>
+              </tr>
+              <tr>
+                <td>Стоимость</td>
+                <td>от 10 000 &#8381;/мес</td>
+                <td>Часть зарплаты менеджера (~20 000 &#8381;/мес)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Тарифы</h2>
+        <p class="section__desc">Стоимость зависит от количества подписок и сервисов. Внедрение — от 50 000 руб. разово.</p>
+        <div class="niches">
+          <div class="niches__item">
+            <h3>Базовый — 10 000 &#8381;/мес</h3>
+            <p>До 20 клиентских подписок. 3 сервиса (например, Wazzup24 + Яндекс.Директ + SMS.ru). Telegram-алерты. Генерация счетов-оферт. Подходит для небольших студий с 5-10 клиентами.</p>
+          </div>
+          <div class="niches__item">
+            <h3>Бизнес — 25 000 &#8381;/мес</h3>
+            <p>До 100 подписок. Все поддерживаемые сервисы. Интеграция с Bitrix24/amoCRM. Счета-оферты с реквизитами. Мониторинг входящих счетов из Gmail. Ежемесячные отчёты в Google Sheets. Оптимально для студий с 15-30 клиентами.</p>
+          </div>
+          <div class="niches__item">
+            <h3>Корпоративный — 50 000 &#8381;/мес</h3>
+            <p>Безлимит подписок. Кастомные интеграции с любыми сервисами. Веб-дашборд со сводкой. Приоритетная поддержка. Добавление новых сервисов по запросу. Для крупных агентств с 50+ клиентами.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Результаты</h2>
+        <div class="niches">
+          <div class="niches__item">
+            <h3>82 автоматические проверки за первую неделю</h3>
+            <p>Бот ежедневно проверяет 7 сервисов для всех клиентов. За первую неделю — 82 проверки, 0 пропущенных подписок. Ранее менеджер проверял раз в неделю и регулярно пропускал сроки.</p>
+          </div>
+          <div class="niches__item">
+            <h3>22 счёта-оферты сгенерированы автоматически</h3>
+            <p>Каждый счёт — с правильными реквизитами, суммой с учётом партнёрской скидки и автоинкрементным номером. Раньше на это уходило 6-8 часов в месяц ручной работы.</p>
+          </div>
+          <div class="niches__item">
+            <h3>2 критические подписки пойманы вовремя</h3>
+            <p>Бот обнаружил 2 подписки Wazzup24 с остатком менее 3 дней, которые менеджер пропустил. Клиенты не потеряли WhatsApp-каналы на выходных.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Частые вопросы</h2>
+        <div class="faq">
+          <div class="faq__item">
+            <button class="faq__question">Какие сервисы поддерживает система?</button>
+            <div class="faq__answer">
+              <p>Из коробки: Wazzup24, Bitrix24, amoCRM, Яндекс.Директ, SMS.ru, AIDeploy, Gmail (входящие счета). Можем подключить любой сервис с личным кабинетом через Playwright или API. Добавление нового сервиса — 1-3 рабочих дня.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question">Как работает мониторинг без API?</button>
+            <div class="faq__answer">
+              <p>Для сервисов без API мы используем Playwright — headless-браузер, который логинится в личный кабинет, перехватывает XHR-запросы и парсит данные о подписках. Поддерживается двухфакторная авторизация (TOTP-коды генерируются программно).</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question">Куда приходят алерты?</button>
+            <div class="faq__answer">
+              <p>Алерты с прикреплённым счётом-офертой отправляются в Telegram-бота. Параллельно создаётся задача в Bitrix24 или amoCRM с дедлайном и ответственным менеджером. Можно настроить отправку на email.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question">Счета генерируются автоматически?</button>
+            <div class="faq__answer">
+              <p>Да. Система генерирует счета-оферты из вашего шаблона DOCX: подставляет реквизиты, номер, дату, наименование услуги, период и сумму. Добавляет электронную подпись. Номера ведутся автоматически (непрерывная нумерация).</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question">Безопасно ли хранить пароли от сервисов?</button>
+            <div class="faq__answer">
+              <p>Все учётные данные хранятся в зашифрованном .env файле на вашем сервере. Система работает на вашей инфраструктуре — данные не покидают ваш сервер. Мы рекомендуем использовать отдельные сервисные аккаунты с минимальными правами.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question">Сколько стоит внедрение?</button>
+            <div class="faq__answer">
+              <p>Внедрение — от 50 000 руб. разово: настройка сервера, подключение сервисов, шаблоны счетов, интеграция с CRM, тестирование. Поддержка — от 10 000 руб./мес: мониторинг, обновления при изменении интерфейсов сервисов, добавление новых интеграций.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Полезные материалы</h2>
+        <ul class="feature-list">
+          <li class="feature-list__item"><a href="/blog/avtomatizaciya-billinga-bot-vystavlyaet-scheta/">Кейс: как мы автоматизировали биллинг IT-компании</a> — подробная статья с техническими деталями</li>
+          <li class="feature-list__item"><a href="/razrabotka-sajtov/ai-agenty/">AI-агенты для бизнеса</a> — автоматизация бизнес-процессов с помощью ИИ</li>
+          <li class="feature-list__item"><a href="/crm-sistemy/">CRM-системы</a> — внедрение Bitrix24 и amoCRM</li>
+          <li class="feature-list__item"><a href="/analitika-dlya-biznesa/">Аналитика для бизнеса</a> — дашборды и отчёты на Metabase</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2 class="cta__title">Автоматизируйте биллинг вашей IT-компании</h2>
+        <p class="cta__text">Оставьте заявку — мы проанализируем ваши сервисы, посчитаем экономию и предложим план внедрения. Первая консультация — бесплатно.</p>
+        <a href="/kontakty/" class="btn btn--lg">Получить консультацию</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><div class="footer__logo"><img src="/img/favicon.svg" alt="FriendAdmin" width="28" height="28"><span>FriendAdmin</span></div><p class="footer__desc" data-i18n="footer.desc">Веб-студия полного цикла. Создаём сайты, внедряем CRM, продвигаем бизнес в интернете с 2014 года.</p></div>
+        <div><div class="footer__heading" data-i18n="footer.servicesHeading">Услуги</div><div class="footer__links"><a href="/razrabotka-sajtov/" data-i18n="footer.linkDev">Разработка сайтов</a><a href="/crm-sistemy/" data-i18n="footer.linkCrm">CRM-системы</a><a href="/seo-prodvizhenie/" data-i18n="footer.linkSeo">SEO-продвижение</a><a href="/it-podderzhka/" data-i18n="footer.linkIt">IT-поддержка</a></div></div>
+        <div><div class="footer__heading" data-i18n="footer.companyHeading">Компания</div><div class="footer__links"><a href="/o-kompanii/" data-i18n="footer.linkAbout">О компании</a><a href="/portfolio/" data-i18n="footer.linkPortfolio">Портфолио</a><a href="/kontakty/" data-i18n="footer.linkContacts">Контакты</a><a href="/politika-konfidentsialnosti/" data-i18n="footer.linkPrivacy">Политика конфиденциальности</a></div></div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__copy">&copy; 2014–2026 FriendAdmin. <span data-i18n="footer.rights">Все права защищены.</span></div>
+        <div class="footer__socials">
+          <a href="https://t.me/friend_admin" target="_blank" rel="noopener" aria-label="Telegram"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="https://app.aideploy.ru/widget.js" data-agent="007e67f2-d9fd-494c-ac78-1156c5567682"></script>
+</body>
+</html>
