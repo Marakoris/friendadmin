@@ -283,11 +283,11 @@ if (contactForm) {
     var btn = form.querySelector('.btn');
     btn.disabled = true;
 
-    fetch('https://api.telegram.org/bot__BOT_TOKEN__/sendMessage', {
+    fetch('https://api.telegram.org/botREDACTED_BOT_TOKEN/sendMessage', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        chat_id: '__CHAT_ID__',
+        chat_id: '870499087',
         text: text,
         parse_mode: 'HTML'
       })
