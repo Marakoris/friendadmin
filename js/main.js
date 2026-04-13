@@ -376,6 +376,20 @@ if (lightbox) {
   });
 }
 
+// ==================== Phone & Telegram click tracking ====================
+
+document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+  el.addEventListener('click', function() {
+    analytics.track('phone_click', { phone: el.getAttribute('href') });
+  });
+});
+
+document.querySelectorAll('a[href*="t.me/"]').forEach(function(el) {
+  el.addEventListener('click', function() {
+    analytics.track('telegram_click', { url: el.getAttribute('href') });
+  });
+});
+
 // ==================== Section view tracking ====================
 
 var sectionObserver = new IntersectionObserver(function(entries) {
