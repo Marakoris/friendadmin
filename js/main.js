@@ -283,13 +283,15 @@ if (contactForm) {
     var btn = form.querySelector('.btn');
     btn.disabled = true;
 
-    fetch('https://api.telegram.org/botREDACTED_BOT_TOKEN/sendMessage', {
+    fetch('https://seo.fastnet-secure.com/api/contact/friendadmin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        chat_id: '870499087',
-        text: text,
-        parse_mode: 'HTML'
+        name: name,
+        phone: phone,
+        email: emailVal,
+        service: serviceVal !== '—' ? serviceVal : '',
+        message: messageVal
       })
     })
     .then(function(res) { return res.json(); })
