@@ -130,6 +130,16 @@
     }
   }
   </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".summary-box", ".article-conclusion"]
+      }
+    }
+  </script>
   <!-- Yandex.Metrika -->
   <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(95899715,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
   <noscript><div><img src="https://mc.yandex.ru/watch/95899715" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
@@ -153,6 +163,44 @@
     .faq-item { margin-bottom: 1.5rem; }
     .faq-item:last-child { margin-bottom: 0; }
     .faq-item h3 { color: #1a1a2e; margin-bottom: 0.5rem; }
+    /* Добавляем стили для summary-box */
+    .summary-box {
+      border: 1px solid #e0e0e0;
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+    }
+    .summary-box strong {
+      display: block;
+      margin-bottom: 0.8rem;
+      font-size: 1.1em;
+      color: #1a1a2e;
+    }
+    .summary-box ul {
+      list-style-type: disc;
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+    .summary-box li {
+      margin-bottom: 0.5rem;
+    }
+    /* Добавляем стили для article-conclusion */
+    .article-conclusion {
+      border-top: 1px solid #e0e0e0;
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+      background-color: #fcfcfc;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    .article-conclusion h2 {
+      font-size: 1.6rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: #1a1a2e;
+    }
+
     @media (max-width: 768px) {
       .article-content h1 { font-size: 1.5rem; }
       .article-content table { font-size: 0.85rem; }
@@ -188,7 +236,17 @@
 
     <h1 style="text-align: center;">Кейс: 15 заявок в месяц с нуля для частного психолога | FriendAdmin</h1>
 
-    <p>На современном конкурентном рынке услуг крайне важно иметь эффективное цифровое представительство. Для частных специалистов, таких как психологи, тренеры, юристы, сайт-визитка становится не просто имиджевым инструментом, но мощным источником привлечения новых клиентов. Этот кейс демонстрирует, как команда FriendAdmin помогла частному психологу с нуля организовать стабильный поток клиентов с помощью грамотно разработанного сайта-визитки и стратегического подхода к онлайн-продвижению.</p>
+    <div class="summary-box">
+      <strong>Коротко о главном:</strong>
+      <ul>
+        <li>FriendAdmin помог частному психологу создать сайт-визитку и настроить продвижение с нуля.</li>
+        <li>В первый месяц работы сайт принес 15 целевых заявок и обеспечил полную запись на 2 недели.</li>
+        <li>Стоимость одной заявки из рекламы составила 667 рублей, что значительно ниже комиссий агрегаторов.</li>
+        <li>Благодаря комплексному подходу (сайт + SEO + PPC) повысился профессиональный имидж и органический трафик.</li>
+      </ul>
+    </div>
+
+    <p>Для частных специалистов, таких как психологи, сайт является мощным источником привлечения новых клиентов и повышения профессионального имиджа. Этот кейс демонстрирует, как команда FriendAdmin помогла частному психологу с нуля организовать стабильный поток клиентов, создав эффективный сайт-визитку и грамотно его продвинув.</p>
 
     <h2 id="about-client">1. О клиенте</h2>
     <p>Наш клиент — частный практикующий психолог со специализацией в области когнитивно-поведенческой терапии и работе с кризисными состояниями. До обращения к нам, клиент использовал для привлечения клиентов лишь «сарафанное радио» и редкие публикации в социальных сетях. Отсутствие единой платформы для демонстрации компетенций, отзывов и записи на консультации существенно ограничивало рост её практики. Клиент обладает глубокими знаниями и большим опытом, но навыки в области онлайн-маркетинга были минимальными.</p>
@@ -283,7 +341,7 @@
     <h2 id="feedback">5. Отзыв клиента</h2>
     <blockquote>
         <p>«Честно говоря, я долго сомневалась, нужен ли мне собственный сайт. Казалось, это слишком сложно и дорого. Но команда FriendAdmin развеяла все мои сомнения. Они не просто сделали красивый сайт, они создали настоящий инструмент для привлечения клиентов! Теперь у меня стабильный поток обращений, график заполнен, и я могу сосредоточиться на своей основной работе. Это было лучшее вложение в мою практику!»</p>
-        <p>— Анна Смирнова, Частный психолог</p>
+        <p>— Анна Смирнова, Частный психолог, г. Москва (<a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F" target="_blank" rel="nofollow noopener">Подробнее о профессии психолога</a>)</p>
     </blockquote>
 
     <h2 id="conclusions">6. Выводы</h2>
@@ -296,6 +354,11 @@
         <li><b>Аналитика — наш компас:</b> Постоянное отслеживание показателей с помощью Яндекс.Метрики и Google Analytics позволяет оперативно корректировать стратегию и получать максимальную отдачу от вложений.</li>
     </ul>
     <p>Если вы, как и наш психолог, стремитесь создать мощное онлайн-представительство и получать стабильный поток клиентов, команда FriendAdmin готова помочь вам. Обратитесь к нам для разработки вашего идеального <a href="https://friendadmin.ru/sajt-vizitka/">сайта-визитки</a> или комплексной <a href="https://friendadmin.ru/razrabotka-sajtov/">разработки сайтов</a>, а также для эффективного <a href="https://friendadmin.ru/seo-prodvizhenie/">SEO-продвижения</a>. Не упускайте свой шанс на цифровой успех!</p>
+
+    <div class="article-conclusion">
+      <h2>Итог</h2>
+      <p>Данный кейс успешно демонстрирует, как грамотно разработанный сайт-визитка в сочетании с базовым SEO и контекстной рекламой может обеспечить стабильный поток клиентов для частного специалиста. В первый же месяц психолог получил 15 целевых заявок, загрузил свое расписание и существенно снизил стоимость привлечения клиентов по сравнению с агрегаторами. Это подчеркивает важность профессионального онлайн-присутствия и комплексного подхода к цифровому маркетингу.</p>
+    </div>
 
     <section itemscope itemtype="https://schema.org/FAQPage">
         <h2>Часто задаваемые вопросы</h2>

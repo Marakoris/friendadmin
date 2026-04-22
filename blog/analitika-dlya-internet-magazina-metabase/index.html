@@ -66,6 +66,17 @@
     "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.6", "ratingCount": "2100", "bestRating": "5"}
   }
   </script>
+  <!-- Speakable schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".summary-box", ".article-conclusion"]
+    }
+  }
+  </script>
   <!-- Yandex.Metrika -->
   <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(95899715,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
   <noscript><div><img src="https://mc.yandex.ru/watch/95899715" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
@@ -93,6 +104,46 @@
     .comparison-table th, .comparison-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #eee; }
     .comparison-table th { background: #f8f9fa; font-weight: 600; color: #1a1a2e; }
     .comparison-table tr:hover { background: #fafbfc; }
+    /* Styles for summary-box and article-conclusion */
+    .summary-box {
+      background-color: #e6f7ff; /* Light blue background */
+      border-left: 5px solid #1890ff; /* Blue left border */
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 4px;
+    }
+    .summary-box strong {
+      display: block;
+      margin-bottom: 0.75rem;
+      font-size: 1.15rem;
+      color: #1890ff;
+    }
+    .summary-box ul {
+      list-style-type: disc;
+      margin-left: 1.25rem;
+      padding-left: 0;
+    }
+    .summary-box li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+      color: #333;
+    }
+    .article-conclusion {
+      background-color: #f0f8ff; /* Very light blue background */
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-radius: 8px;
+      border: 1px solid #d6e4ff;
+    }
+    .article-conclusion h2 {
+      margin-top: 0;
+      color: #27408b; /* Darker blue heading */
+    }
+    .article-conclusion p {
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 0;
+    }
   </style>
 </head>
 <body>
@@ -140,7 +191,17 @@
 
       <h1>Аналитика для интернет-магазина на Metabase: дашборды, AI-аналитик и реальные примеры</h1>
 
-      <p>Большинство владельцев интернет-магазинов знают свою выручку. Некоторые знают средний чек. Единицы видят полную картину: какие каналы приводят самых ценных клиентов, почему мобильный чек в 2 раза ниже десктопного и где именно теряются деньги.</p>
+      <div class="summary-box">
+        <strong>Коротко о главном:</strong>
+        <ul>
+          <li><strong>Metabase</strong> — open-source BI-платформа, которая позволяет строить комплексную аналитику для интернет-магазинов, объединяя данные из различных источников (БД, CRM, платежи).</li>
+          <li>В статье показаны реальные примеры дашбордов для интернет-магазина: мобильная аналитика, технические данные, клиенты, платежи и общая выручка за 5 лет.</li>
+          <li>Встроенный <strong>AI-аналитик Metabase</strong> автоматически находит аномалии, тренды и даёт текстовые рекомендации прямо на дашбордах, ускоряя принятие решений.</li>
+          <li>Metabase является бесплатной альтернативой коммерческим BI-системам, предлагая полную конфиденциальность данных и прямое подключение к базам данных.</li>
+        </ul>
+      </div>
+
+      <p>Эта статья демонстрирует, как с помощью open-source BI-платформы <strong>Metabase</strong> можно настроить комплексную аналитику для интернет-магазина, объединив все необходимые данные и использовав потенциал встроенного AI-аналитика. Большинство владельцев интернет-магазинов знают свою выручку, но Metabase позволяет видеть полную картину: какие каналы приводят самых ценных клиентов, почему мобильный чек ниже и где именно теряются деньги.</p>
 
       <p>В этой статье покажем, как мы настроили комплексную аналитику для интернет-магазина на <strong>Metabase</strong> — open-source BI-платформе. Все скриншоты — из реального проекта.</p>
 
@@ -157,7 +218,7 @@
         <li><strong>Данные из CRM</strong> — сделки, воронка, менеджеры</li>
       </ul>
 
-      <p>Metabase объединяет всё в одном месте. Подключаем базу данных магазина, CRM, платёжную систему — и строим дашборды, которые обновляются автоматически.</p>
+      <p>Metabase объединяет всё в одном месте. Подключаем базу данных магазина, CRM, платёжную систему — и строим дашборды, которые обновляются автоматически. Подробнее о возможностях систем бизнес-аналитики можно узнать в статье <a href="https://ru.wikipedia.org/wiki/Business_intelligence" target="_blank" rel="nofollow noopener">на Википедии</a>.</p>
 
       <h2>Дашборд 1: Мобильная аналитика</h2>
 
@@ -445,6 +506,11 @@
       </table>
 
       <p>Сам Metabase бесплатный. Для хостинга достаточно VPS от 1 000 руб./мес. Итого стоимость владения — минимальная по сравнению с коммерческими BI-решениями.</p>
+
+      <div class="article-conclusion">
+        <h2>Итог</h2>
+        <p>Настройка аналитики для интернет-магазина на Metabase позволяет получать полную и достоверную картину бизнеса, объединяя данные из разных источников. Встроенный AI-аналитик значительно ускоряет анализ и принятие решений, выявляя аномалии и предоставляя конкретные рекомендации. Благодаря открытому исходному коду и гибкости настройки, Metabase является мощным и экономически выгодным инструментом для масштабируемой бизнес-аналитики.</p>
+      </div>
 
       <h2>FAQ</h2>
 
