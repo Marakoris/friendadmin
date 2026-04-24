@@ -13,6 +13,7 @@
   <meta property="og:url" content="https://friendadmin.ru/blog/">
   <meta property="og:site_name" content="FriendAdmin">
   <meta property="og:locale" content="ru_RU">
+  <link rel="alternate" type="application/rss+xml" title="FriendAdmin Blog" href="https://friendadmin.ru/rss.xml">
   <link rel="stylesheet" href="/css/style.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7929EMM00E"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7929EMM00E');</script>
@@ -47,14 +48,13 @@
     <div class="container header__inner">
       <a href="/" class="logo"><img src="/img/favicon.svg" alt="FriendAdmin" class="logo__icon" width="36" height="36"><span class="logo__text">FriendAdmin</span></a>
       <nav class="nav" id="nav">
-        <a href="/uslugi/" class="nav__link" data-i18n="nav.services">Услуги</a>
-        <a href="/portfolio/" class="nav__link" data-i18n="nav.portfolio">Портфолио</a>
-        <a href="/o-kompanii/" class="nav__link" data-i18n="nav.about">О компании</a>
-        <a href="/kontakty/" class="nav__link" data-i18n="nav.contacts">Контакты</a>
+        <a href="/uslugi/" class="nav__link">Услуги</a>
+        <a href="/portfolio/" class="nav__link">Портфолио</a>
+        <a href="/o-kompanii/" class="nav__link">О компании</a>
+        <a href="/kontakty/" class="nav__link">Контакты</a>
         <a href="/blog/" class="nav__link">Блог</a>
       </nav>
-      <div class="lang-switch"><button class="lang-switch__btn active" data-lang="ru">RU</button><button class="lang-switch__btn" data-lang="en">EN</button></div>
-      <a href="/kontakty/" class="btn btn--sm btn--header" data-i18n="nav.cta">Обсудить проект</a>
+      <a href="/kontakty/" class="btn btn--sm btn--header">Обсудить проект</a>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </header>
@@ -80,81 +80,312 @@
       <div class="container">
         <div class="blog-grid">
           <div class="blog-card">
-            <a href="/blog/analitika-dlya-internet-magazina-metabase/">
-              <picture>
-                <source srcset="/img/blog/metabase/metabase-mobile-kpi.webp" type="image/webp">
-                <img src="/img/blog/metabase/metabase-mobile-kpi.jpg" alt="Аналитика для интернет-магазина на Metabase" width="400" height="200" loading="lazy">
-              </picture>
-            </a>
+            
             <div class="blog-card__body">
-              <div class="blog-card__date">20 марта 2026</div>
-              <h2 class="blog-card__title"><a href="/blog/analitika-dlya-internet-magazina-metabase/">Аналитика для интернет-магазина на Metabase — дашборды и AI-аналитик</a></h2>
-              <p class="blog-card__desc">Как настроить аналитику интернет-магазина на Metabase: дашборды продаж, мобильной аналитики, платежей. AI-аналитик с рекомендациями, реальные примеры.</p>
+              <div class="blog-card__date"><span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:8px;">Кейс</span>24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/kejs-vyvod-sajta-juridicheskoj-kompanii-v-top-5-jandeksa-za-3-m/">Кейс: Вывод сайта юридической компании в ТОП-5 Яндекса за 3 месяца</a></h2>
+              <p class="blog-card__desc">Наш клиент — динамично развивающаяся юридическая компания из Москвы, специализирующаяся на предоставлении услуг для среднего и малого бизнеса, а также частных л</p>
             </div>
           </div>
           <div class="blog-card">
-            <a href="/blog/obzor-aideploy-platforma-ai-agentov/">
-              <picture>
-                <source srcset="/img/blog/aideploy/aideploy-dashboard.webp" type="image/webp">
-                <img src="/img/blog/aideploy/aideploy-dashboard.jpg" alt="AIDeploy — платформа AI-агентов для бизнеса" width="400" height="200" loading="lazy">
-              </picture>
-            </a>
+            
             <div class="blog-card__body">
-              <div class="blog-card__date">19 марта 2026</div>
-              <h2 class="blog-card__title"><a href="/blog/obzor-aideploy-platforma-ai-agentov/">AIDeploy — платформа AI-агентов для бизнеса: обзор</a></h2>
-              <p class="blog-card__desc">Обзор платформы AIDeploy: AI-агенты для автоматизации продаж и поддержки. Омниканальность, интеграция с AmoCRM, настройка за 15 минут.</p>
+              <div class="blog-card__date"><span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:8px;">Кейс</span>24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/kejs-zapusk-internet-magazina-detskoj-odezhdy-okupaemost-za/">Кейс: Запуск интернет-магазина детской одежды</a></h2>
+              <p class="blog-card__desc">В FriendAdmin мы не просто создаем сайты — мы строим бизнес-инструменты, которые приносят нашим клиентам ощутимую прибыль. Этот кейс — яркое тому подтверждение.</p>
             </div>
           </div>
           <div class="blog-card">
-            <a href="/blog/chat-bot-dlya-sajta-s-ii/">
-              <picture>
-                <source srcset="/img/blog/chatbot-dlya-sajta-ii.webp" type="image/webp">
-                <img src="/img/blog/chatbot-dlya-sajta-ii.jpg" alt="Чат-бот для сайта с ИИ" width="400" height="200" loading="lazy">
-              </picture>
+            
+            <div class="blog-card__body">
+              <div class="blog-card__date"><span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:8px;">Кейс</span>24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/kejs-ai-sekretar-dlja-avtoservisa-obrabotka-200-zajavok-v-me/">Кейс: AI-секретарь для автосервиса</a></h2>
+              <p class="blog-card__desc">Современный бизнес требует высокой эффективности и способности быстро адаптироваться к изменяющимся условиям рынка. Особенно это актуально для сфер с большим по</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/kejs-vnedrenie-ai-sekretarja-dlja-stomatologicheskoj-kliniki-a/">
+              <img src="/blog/kejs-vnedrenie-ai-sekretarja-dlja-stomatologicheskoj-kliniki-a/cover.jpg" alt="Кейс: Внедрение AI-секретаря для стоматологической клиники" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
             </a>
             <div class="blog-card__body">
-              <div class="blog-card__date">19 марта 2026</div>
-              <h2 class="blog-card__title"><a href="/blog/chat-bot-dlya-sajta-s-ii/">Чат-бот для сайта с ИИ — автоматизация продаж и поддержки</a></h2>
-              <p class="blog-card__desc">Как ИИ чат-бот автоматизирует продажи и поддержку клиентов на сайте. Сравнение с обычным ботом, результаты внедрения, стоимость от 50 000 руб.</p>
+              <div class="blog-card__date"><span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:8px;">Кейс</span>24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/kejs-vnedrenie-ai-sekretarja-dlja-stomatologicheskoj-kliniki-a/">Кейс: Внедрение AI-секретаря для стоматологической клиники</a></h2>
+              <p class="blog-card__desc">В современном мире, где конкуренция постоянно растет, эффективность каждой бизнес-процедуры становится ключевым фактором успеха. Для клиник, особенно в сфере зд</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            
+            <div class="blog-card__body">
+              <div class="blog-card__date">24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/turnkey-seo-website-gajd-2026/">Turnkey Seo Website Гайд 2026</a></h2>
+              <p class="blog-card__desc">В современном цифровом мире, где конкуренция за внимание пользователя достигает пика, иметь просто красивый сайт уже недостаточно. Ваш веб-ресурс должен быть не</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            
+            <div class="blog-card__body">
+              <div class="blog-card__date">24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/turnkey-seo-gajd/">Turnkey SEO гайд: что это, стоимость и перспективы 2026</a></h2>
+              <p class="blog-card__desc">Полный гайд по Turnkey SEO: узнайте, что это такое, сколько стоит, какие имеет преимущества и недостатки. Закажите SEO под ключ для бизнеса в FriendAdmin!</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/kejs-seo-prodvizhenie-internet-magazina-mebeli-rost-trafika/">
+              <img src="/blog/kejs-seo-prodvizhenie-internet-magazina-mebeli-rost-trafika/cover.jpg" alt="Кейс: SEO-продвижение интернет-магазина мебели" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date"><span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:8px;">Кейс</span>24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/kejs-seo-prodvizhenie-internet-magazina-mebeli-rost-trafika/">Кейс: SEO-продвижение интернет-магазина мебели</a></h2>
+              <p class="blog-card__desc">Наш клиент — крупный интернет-магазин, специализирующийся на продаже мебели для дома и офиса. Компания работает на рынке более 7 лет, предлагая широкий ассортим</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/turnkey-seo-podrobnyj-gajd-2026/">
+              <img src="/blog/turnkey-seo-podrobnyj-gajd-2026/cover.jpg" alt="Turnkey SEO — Подробный Гайд 2026" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date">24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/turnkey-seo-podrobnyj-gajd-2026/">Turnkey SEO — Подробный Гайд 2026</a></h2>
+              <p class="blog-card__desc">Полный гайд по turnkey SEO на 2026 год от FriendAdmin. Узнайте, что такое SEO под ключ, его преимущества, этапы и как выбрать лучшего подрядчика. Получите гарантированный рост трафика и конверсий. Зак</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            
+            <div class="blog-card__body">
+              <div class="blog-card__date"><span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:8px;">Кейс</span>24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/kejs-sozdanie-internet-magazina-mebeli-na-opencart-150-zaka/">Кейс: Создание интернет-магазина мебели на OpenCart</a></h2>
+              <p class="blog-card__desc">Наш клиент — региональная мебельная компания «Уютный Дом» (название изменено), специализирующаяся на производстве и продаже корпусной и мягкой мебели среднего ц</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            
+            <div class="blog-card__body">
+              <div class="blog-card__date"><span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:8px;">Кейс</span>24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/kejs-vnedrenie-bitriks24-dlja-stroitelnoj-kompanii-rost-pro/">Кейс: Внедрение Битрикс24 для строительной компании</a></h2>
+              <p class="blog-card__desc">Наш клиент — крупная региональная строительная компания, специализирующаяся на возведении многоквартирных жилых комплексов и частных домовладений премиум-класса</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            
+            <div class="blog-card__body">
+              <div class="blog-card__date"><span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:8px;">Кейс</span>24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/kejs-amocrm-dlja-agentstva-nedvizhimosti-avtomatizatsija-voronk/">Кейс: AmoCRM для агентства недвижимости</a></h2>
+              <p class="blog-card__desc">Как FriendAdmin внедрила AmoCRM, сократив время обработки заявок на 45% и увеличив конверсию в сделку на 30% за 3 месяца для крупного агентства недвижимости.</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/seo-prodvizhenie-2026/">
+              <img src="/blog/seo-prodvizhenie-2026/cover.jpg" alt="SEO продвижение 2026: Тренды и алгоритмы для вашего сайта" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date">24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/seo-prodvizhenie-2026/">SEO продвижение 2026: Тренды и алгоритмы для вашего сайта</a></h2>
+              <p class="blog-card__desc">SEO продвижение 2026: узнайте как вывести сайт в ТОП с нуля! Актуальные тренды, алгоритмы и инструменты оптимизации от FriendAdmin. Получите бесплатную консультацию и аудит уже сегодня!</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            
+            <div class="blog-card__body">
+              <div class="blog-card__date"><span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:8px;">Кейс</span>24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/kejs-sajt-vizitka-dlja-chastnogo-psihologa-15-zajavok-v-mesjats/">Кейс: Сайт-визитка для частного психолога</a></h2>
+              <p class="blog-card__desc">На современном конкурентном рынке услуг крайне важно иметь эффективное цифровое представительство. Для частных специалистов, таких как психологи, тренеры, юрист</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            
+            <div class="blog-card__body">
+              <div class="blog-card__date"><span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:8px;">Кейс</span>24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/kejs-sozdanie-korporativnogo-sajta-dlja-logisticheskoj-kompani/">Кейс: Создание корпоративного сайта для логистической компании с интеграцией 1С</a></h2>
+              <p class="blog-card__desc">Разработка современного корпоративного сайта с глубокой интеграцией
+            с 1С для оптимизации бизнес-процессов.</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            
+            <div class="blog-card__body">
+              <div class="blog-card__date"><span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:8px;">Кейс</span>24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/kejs-avtomatizatsija-monitoringa-podpisok-i-vystavlenija-schetov/">Кейс: Автоматизация мониторинга подписок и выставления счетов для IT-компании</a></h2>
+              <p class="blog-card__desc">Наш клиент — динамично развивающаяся IT-компания, специализирующаяся на разработке и продаже SaaS-решений для малого и среднего бизнеса в сфере маркетинга и про</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            
+            <div class="blog-card__body">
+              <div class="blog-card__date">24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/seo-audit-servis/">SEO аудит сервис 2024: Оптимизируйте сайт и обойдите конкурентов</a></h2>
+              <p class="blog-card__desc">Профессиональный SEO аудит сервис от FriendAdmin: полный анализ сайта, выявление ошибок, стратегия роста. Увеличьте трафик и продажи с нами!</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/kejs-internet-magazin-avtozapchastej-s-integratsiej-1s-50-000/">
+              <img src="/blog/kejs-internet-magazin-avtozapchastej-s-integratsiej-1s-50-000/cover.jpg" alt="Кейс: Интернет-магазин автозапчастей с интеграцией 1С" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date"><span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:8px;">Кейс</span>24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/kejs-internet-magazin-avtozapchastej-s-integratsiej-1s-50-000/">Кейс: Интернет-магазин автозапчастей с интеграцией 1С</a></h2>
+              <p class="blog-card__desc">В современном динамичном бизнесе наличие эффективного онлайн-присутствия является критически важным для компаний, работающих с большим ассортиментом товаров. Ос</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/seo-audit-sajta-servis/">
+              <img src="/blog/seo-audit-sajta-servis/cover.jpg" alt="Seo Аудит Сайта Сервис" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date">24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/seo-audit-sajta-servis/">Seo Аудит Сайта Сервис</a></h2>
+              <p class="blog-card__desc">Истоки каждого по-настоящему успешного проекта лежат в глубоком и всестороннем понимании его текущего положения на рынке. Наш уникальный подход к SEO аудиту зиж</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/turnkey-seo-sajt-kupit/">
+              <img src="/blog/turnkey-seo-sajt-kupit/cover.jpg" alt="Turnkey Seo Сайт Купить" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date">24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/turnkey-seo-sajt-kupit/">Turnkey Seo Сайт Купить</a></h2>
+              <p class="blog-card__desc">В мире активно развивающегося цифрового маркетинга, чтобы быть успешным в онлайн-пространстве, требуется не просто наличие сайта, а его</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            
+            <div class="blog-card__body">
+              <div class="blog-card__date">24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/crm-sistema-na-zakaz/">Crm Система На Заказ</a></h2>
+              <p class="blog-card__desc">Разработаем CRM систему на заказ, адаптированную под бизнес-процессы вашей компании. Автоматизация продаж, аналитика, рост прибыли. Консультация и расчет стоимости.</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            
+            <div class="blog-card__body">
+              <div class="blog-card__date"><span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:4px;font-size:0.8rem;margin-right:8px;">Кейс</span>24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/kejs-smm-dlja-fitnes-studii-rost-podpischikov-s-500-do-5000/">Кейс: SMM для фитнес-студии</a></h2>
+              <p class="blog-card__desc">Наш клиент — молодая, но амбициозная фитнес-студия, специализирующаяся на функциональных тренировках и персональном коучинге. Они активно использовали современн</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            
+            <div class="blog-card__body">
+              <div class="blog-card__date">24 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/hosting-dlja-sajta-vizitki/">Хостинг Для Сайта Визитки</a></h2>
+              <p class="blog-card__desc">Вы стоите на пороге запуска своего первого онлайн-проекта — сайта-визитки, или уже задумываетесь о его создании. Это превосходный инструмент для презентации ваш</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            
+            <div class="blog-card__body">
+              <div class="blog-card__date">22 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/turnkey-seo/">Turnkey Seo</a></h2>
+              <p class="blog-card__desc">Основная идея Turnkey SEO — это передача всего процесса на аутсорс компетентным специалистам, которые гарантированно приведут ваш проект к успеху в поисковых си</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/skolko-stoit-razrabotka-sajta-2026/">
+              <img src="/blog/skolko-stoit-razrabotka-sajta-2026/cover.jpg" alt="Сколько стоит разработка сайта под ключ в 2026 году" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date">22 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/skolko-stoit-razrabotka-sajta-2026/">Сколько стоит разработка сайта под ключ в 2026 году</a></h2>
+              <p class="blog-card__desc">Актуальные цены на создание сайтов в 2026: лендинги, визитки, корпоративные сайты, интернет-магазины. От чего зависит стоимость.</p>
             </div>
           </div>
           <div class="blog-card">
             <a href="/blog/skolko-stoit-razrabotka-ai-agenta-2026/">
-              <picture>
-                <source srcset="/img/blog/ai-agent-stoimost-razrabotki.webp" type="image/webp">
-                <img src="/img/blog/ai-agent-stoimost-razrabotki.jpg" alt="Сколько стоит разработка AI-агента в 2026" width="400" height="200" loading="lazy">
-              </picture>
+              <img src="/blog/skolko-stoit-razrabotka-ai-agenta-2026/cover.jpg" alt="Сколько стоит разработка AI-агента — цены 2026" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
             </a>
             <div class="blog-card__body">
-              <div class="blog-card__date">19 марта 2026</div>
+              <div class="blog-card__date">22 апреля 2026</div>
               <h2 class="blog-card__title"><a href="/blog/skolko-stoit-razrabotka-ai-agenta-2026/">Сколько стоит разработка AI-агента — цены 2026</a></h2>
-              <p class="blog-card__desc">Полный разбор стоимости разработки AI-агента для бизнеса: от 50 000 руб. за чат-бота до комплексных решений. Факторы цены, кейсы, ROI.</p>
-            </div>
-          </div>
-          <div class="blog-card">
-            <a href="/blog/ai-agenty-dlya-biznesa-2026/">
-              <picture>
-                <source srcset="/img/blog/ai-agenty-biznes-avtomatizaciya.webp" type="image/webp">
-                <img src="/img/blog/ai-agenty-biznes-avtomatizaciya.jpg" alt="AI агенты для бизнеса в 2026" width="400" height="200" loading="lazy">
-              </picture>
-            </a>
-            <div class="blog-card__body">
-              <div class="blog-card__date">18 марта 2026</div>
-              <h2 class="blog-card__title"><a href="/blog/ai-agenty-dlya-biznesa-2026/">AI агенты для бизнеса: автоматизация процессов в 2026 году</a></h2>
-              <p class="blog-card__desc">Как AI-агенты помогают бизнесу автоматизировать рутину, снижать расходы и увеличивать продажи. Примеры, стоимость, пошаговое внедрение.</p>
+              <p class="blog-card__desc">Сколько стоит разработка AI-агента для бизнеса в 2026 году. Цены от 50 000 руб., факторы стоимости, сравнение тарифов и окупаемость инвестиций.</p>
             </div>
           </div>
           <div class="blog-card">
             <a href="/blog/skolko-stoit-internet-magazin-2026/">
-              <picture>
-                <source srcset="/img/blog/internet-magazin-stoimost-2026.webp" type="image/webp">
-                <img src="/img/blog/internet-magazin-stoimost-2026.jpg" alt="Сколько стоит интернет-магазин в 2026" width="400" height="200" loading="lazy">
-              </picture>
+              <img src="/blog/skolko-stoit-internet-magazin-2026/cover.jpg" alt="Сколько стоит интернет-магазин в 2026 — цены от 30 000 ₽" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
             </a>
             <div class="blog-card__body">
-              <div class="blog-card__date">17 марта 2026</div>
-              <h2 class="blog-card__title"><a href="/blog/skolko-stoit-internet-magazin-2026/">Сколько стоит создать интернет-магазин в 2026 году</a></h2>
-              <p class="blog-card__desc">Полный разбор стоимости создания интернет-магазина: платформы, этапы разработки, тарифы и на чём можно сэкономить.</p>
+              <div class="blog-card__date">22 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/skolko-stoit-internet-magazin-2026/">Сколько стоит интернет-магазин в 2026 — цены от 30 000 ₽</a></h2>
+              <p class="blog-card__desc">Узнайте, сколько стоит создать интернет-магазин в 2026 году под ключ с FriendAdmin. Полный анализ цен, платформ и этапов разработки. Получите детальный расчет стоимости сегодня!</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/optimize-website-for-yandex/">
+              <img src="/blog/optimize-website-for-yandex/cover.jpg" alt="Optimize Website For Yandex" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date">22 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/optimize-website-for-yandex/">Optimize Website For Yandex</a></h2>
+              <p class="blog-card__desc">В FriendAdmin наша команда ежедневно трудится над тем, чтобы цифровые активы наших клиентов не просто появлялись на первых строчках поиска, но и эффективно конв</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/obzor-aideploy-platforma-ai-agentov/">
+              <img src="/blog/obzor-aideploy-platforma-ai-agentov/cover.jpg" alt="AIDeploy — платформа AI-агентов для бизнеса: обзор возможностей" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date">22 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/obzor-aideploy-platforma-ai-agentov/">AIDeploy — платформа AI-агентов для бизнеса: обзор возможностей</a></h2>
+              <p class="blog-card__desc">Обзор платформы AIDeploy — AI-агенты для автоматизации продаж и поддержки. Омниканальность: Talk-me, Telegram, VK, Avito, AmoCRM. Настройка за 15 минут.</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/kak-vybrat-crm-dlya-malogo-biznesa-2026/">
+              <img src="/blog/kak-vybrat-crm-dlya-malogo-biznesa-2026/cover.jpg" alt="Как выбрать CRM для малого бизнеса в 2026 году" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date">22 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/kak-vybrat-crm-dlya-malogo-biznesa-2026/">Как выбрать CRM для малого бизнеса в 2026 году</a></h2>
+              <p class="blog-card__desc">Подробный гайд по выбору CRM-системы для малого бизнеса. Сравнение AmoCRM, Bitrix24, HubSpot. Критерии выбора, стоимость, интеграции.</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/client-marketing-systems/">
+              <img src="/blog/client-marketing-systems/cover.jpg" alt="Client Marketing Systems" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date">22 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/client-marketing-systems/">Client Marketing Systems</a></h2>
+              <p class="blog-card__desc">В современном динамичном мире успешный бизнес немыслим без эффективного взаимодействия с клиентами. Именно поэтому</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/chat-bot-dlya-sajta-s-ii/">
+              <img src="/blog/chat-bot-dlya-sajta-s-ii/cover.jpg" alt="Чат-бот для сайта с ИИ — автоматизация продаж" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date">22 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/chat-bot-dlya-sajta-s-ii/">Чат-бот для сайта с ИИ — автоматизация продаж</a></h2>
+              <p class="blog-card__desc">Чат-бот для сайта с ИИ: автоматизация продаж и поддержки клиентов. Разработка, внедрение, интеграция с CRM. Увеличение конверсии до 40%. От 50 000 руб.</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/avtomatizaciya-billinga-bot-vystavlyaet-scheta/">
+              <img src="/blog/avtomatizaciya-billinga-bot-vystavlyaet-scheta/cover.jpg" alt="Как мы автоматизировали биллинг IT-компании — бот, который сам выставляет счета" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date">22 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/avtomatizaciya-billinga-bot-vystavlyaet-scheta/">Как мы автоматизировали биллинг IT-компании — бот, который сам выставляет счета</a></h2>
+              <p class="blog-card__desc">BillPilot — бот на Python который мониторит 30+ подписок SaaS-сервисов, генерирует счета-оферты и создаёт задачи в Bitrix24 автоматически.</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/analitika-dlya-internet-magazina-metabase/">
+              <img src="/blog/analitika-dlya-internet-magazina-metabase/cover.jpg" alt="Аналитика для интернет-магазина на Metabase — дашборды, AI-аналитик, примеры" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date">22 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/analitika-dlya-internet-magazina-metabase/">Аналитика для интернет-магазина на Metabase — дашборды, AI-аналитик, примеры</a></h2>
+              <p class="blog-card__desc">Как настроить аналитику интернет-магазина на Metabase: дашборды продаж, мобильной аналитики, платежей, клиентов. AI-аналитик, оповещения, реальные примеры дашбордов.</p>
+            </div>
+          </div>
+          <div class="blog-card">
+            <a href="/blog/ai-agenty-dlya-biznesa-2026/">
+              <img src="/blog/ai-agenty-dlya-biznesa-2026/cover.jpg" alt="AI агенты для бизнеса: Автоматизация процессов в 2026 году" width="400" height="200" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+            </a>
+            <div class="blog-card__body">
+              <div class="blog-card__date">22 апреля 2026</div>
+              <h2 class="blog-card__title"><a href="/blog/ai-agenty-dlya-biznesa-2026/">AI агенты для бизнеса: Автоматизация процессов в 2026 году</a></h2>
+              <p class="blog-card__desc">AI агенты для бизнеса — ключ к эффективной автоматизации. Внедрение AI ассистентов сокращает расходы, ускоряет рутинные задачи. Выберите AI платформу и внедрите AI с FriendAdmin!</p>
             </div>
           </div>
         </div>
