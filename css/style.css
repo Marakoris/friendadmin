@@ -318,7 +318,7 @@ ul, ol {
 
 /* ===== Hero (subpage) ===== */
 .hero--sub {
-  padding-top: 40px;
+  padding-top: 60px;
   padding-bottom: 60px;
   background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);
 }
