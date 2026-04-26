@@ -152,16 +152,30 @@ var burger = document.getElementById('burger');
 var nav = document.getElementById('nav');
 
 if (burger && nav) {
+  var navParent = nav.parentNode;
+
+  function openMenu() {
+    document.body.appendChild(nav);
+    burger.classList.add('active');
+    nav.classList.add('open');
+  }
+
+  function closeMenu() {
+    burger.classList.remove('active');
+    nav.classList.remove('open');
+    navParent.insertBefore(nav, burger);
+  }
+
   burger.addEventListener('click', function() {
-    burger.classList.toggle('active');
-    nav.classList.toggle('open');
+    if (nav.classList.contains('open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 
   nav.querySelectorAll('.nav__link').forEach(function(link) {
-    link.addEventListener('click', function() {
-      burger.classList.remove('active');
-      nav.classList.remove('open');
-    });
+    link.addEventListener('click', closeMenu);
   });
 }
 
