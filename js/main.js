@@ -283,7 +283,7 @@ if (contactForm) {
     var btn = form.querySelector('.btn');
     btn.disabled = true;
 
-    fetch('https://seo.fastnet-secure.com/api/contact/friendadmin', {
+    fetch('https://api.brandee.ru/api/contact/friendadmin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
