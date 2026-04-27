@@ -200,11 +200,11 @@ document.querySelectorAll('.faq__question').forEach(function(btn) {
 });
 
 // ==================== Auto fade-in for hero elements ====================
+// Hero elements are made visible immediately via CSS to prevent CLS.
+// We mark them as visible right away instead of animating them in.
 
 document.querySelectorAll('.hero .hero__title, .hero .hero__subtitle, .hero .hero__sub, .hero .hero__price, .hero .hero__buttons, .hero .hero__note').forEach(function(el) {
-  if (!el.classList.contains('fade-in')) {
-    el.classList.add('fade-in');
-  }
+  el.classList.add('fade-in', 'visible');
 });
 
 // ==================== Fade-in on scroll ====================

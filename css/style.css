@@ -1248,6 +1248,18 @@ ul, ol {
   transform: translateY(0);
 }
 
+/* Prevent CLS: hero elements should be visible immediately */
+.hero .fade-in,
+.hero .hero__title,
+.hero .hero__subtitle,
+.hero .hero__sub,
+.hero .hero__price,
+.hero .hero__buttons,
+.hero .hero__note {
+  opacity: 1;
+  transform: none;
+}
+
 /* ===== Privacy page ===== */
 .prose {
   max-width: 760px;
