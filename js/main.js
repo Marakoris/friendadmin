@@ -18,8 +18,6 @@ const i18n = {
     if (this.currentLang !== 'ru') {
       await this.loadLanguage(this.currentLang);
       this.applyTranslations();
-    } else {
-      await this.loadLanguage('ru');
     }
     this.updateSwitcher();
     this.bindSwitcher();
@@ -28,8 +26,7 @@ const i18n = {
   detectLanguage() {
     const stored = localStorage.getItem('lang');
     if (stored && this.supported.includes(stored)) return stored;
-    const browserLang = (navigator.language || '').split('-')[0];
-    return browserLang === 'ru' ? 'ru' : 'en';
+    return 'ru';
   },
 
   async loadLanguage(lang) {
