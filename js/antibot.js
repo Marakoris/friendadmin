@@ -45,6 +45,7 @@
     document.addEventListener(evt, initAnalytics, {once: true, passive: true});
   });
 
-  // Фоллбэк: через 3 сек загрузить в любом случае (для медленных но реальных)
-  setTimeout(initAnalytics, 3000);
+  // Фоллбэк: через 30 сек загрузить (для пользователей без мыши/тач)
+  // Sape-боты сидят ~7-14с, поэтому 30с отсекает их, но ловит реальных
+  setTimeout(initAnalytics, 30000);
 })();
