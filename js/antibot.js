@@ -1,17 +1,28 @@
 /**
- * Antibot: загружает Яндекс.Метрику только после реального взаимодействия.
+ * Antibot: загружает GA4 и Яндекс.Метрику только после реального взаимодействия.
  * Боты с 0 сек на сайте не генерируют mouse/scroll/touch события.
- * Блоклист IP обновляется автоматически с api.brandee.ru.
  */
 (function() {
   var YM_ID = 95899715;
+  var GA_ID = 'G-7929EMM00E';
   var loaded = false;
 
-  function initMetrika() {
+  function initAnalytics() {
     if (loaded) return;
     loaded = true;
 
-    // Загружаем Метрику
+    // GA4
+    var gs = document.createElement('script');
+    gs.async = true;
+    gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(gs);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+
+    // Яндекс.Метрика
     (function(m,e,t,r,i,k,a){
       m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
       m[i].l=1*new Date();
@@ -31,9 +42,9 @@
   // Триггеры реального пользователя
   var events = ['mousemove', 'scroll', 'keydown', 'touchstart', 'click'];
   events.forEach(function(evt) {
-    document.addEventListener(evt, initMetrika, {once: true, passive: true});
+    document.addEventListener(evt, initAnalytics, {once: true, passive: true});
   });
 
   // Фоллбэк: через 3 сек загрузить в любом случае (для медленных но реальных)
-  setTimeout(initMetrika, 3000);
+  setTimeout(initAnalytics, 3000);
 })();
