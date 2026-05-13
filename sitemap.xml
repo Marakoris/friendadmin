@@ -33,14 +33,18 @@
   <url><loc>https://friendadmin.ru/razrabotka-sajtov/ai-sekretar/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://friendadmin.ru/razrabotka-sajtov/ai-avtomatizaciya/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://friendadmin.ru/razrabotka-sajtov/ai-agenty/chto-takoe-ai-agent/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <!-- removed /landing/ and /mobilnaya-versiya-sajta/ — redirect pages -->
+  <url><loc>https://friendadmin.ru/landing/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://friendadmin.ru/mobilnaya-versiya-sajta/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/politika-konfidentsialnosti/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://friendadmin.ru/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://friendadmin.ru/blog/seo-audit-sajta-zakazat/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://friendadmin.ru/blog/crm-sistema-na-zakaz/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://friendadmin.ru/blog/seo-prodvizhenie-2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://friendadmin.ru/blog/chat-bot-dlya-sajta-s-ii/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/zakazat-seo-audit-sajta/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/seo-audit-servis/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/analitika-dlya-internet-magazina-metabase/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/turnkey-seo-website-gajd-2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://friendadmin.ru/blog/chat-bot-dlya-sajta-s-ii/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/turnkey-seo-podrobnyj-gajd-2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/kak-prodvigat-sajt-v-2026-godu/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/prodvizhenie-v-gugl/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -49,14 +53,12 @@
   <url><loc>https://friendadmin.ru/blog/soprovozhdenie-sajta-vizitki/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/obzor-aideploy-platforma-ai-agentov/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/skolko-stoit-razrabotka-sajta-2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://friendadmin.ru/blog/seo-prodvizhenie-2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/hosting-dlja-sajta-vizitki/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/seo-audit-sajta-servis/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/google-prodvizhenie/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/kak-vybrat-crm-dlya-malogo-biznesa-2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/avtomatizaciya-billinga-bot-vystavlyaet-scheta/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/skolko-stoit-razrabotka-ai-agenta-2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://friendadmin.ru/blog/crm-sistema-na-zakaz/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/skolko-stoit-razrabotat-sajt-v-2026-godu/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/ai-agenty-dlya-biznesa-2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/portfolio/kejs-vnedrenie-ai-sekretarja-dlja-stomatologicheskoj-kliniki-a/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -73,100 +75,4 @@
   <url><loc>https://friendadmin.ru/portfolio/kejs-sozdanie-korporativnogo-sajta-dlja-logisticheskoj-kompani/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://friendadmin.ru/portfolio/kejs-avtomatizatsija-monitoringa-podpisok-i-vystavlenija-schetov/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://friendadmin.ru/portfolio/kejs-salon-krasoty-ai-sekretar-ekonomija-70/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url>
-    <loc>https://friendadmin.ru/blog/kejs-ai-sekretar-dlja-avtoservisa-obrabotka-200-zajavok-v-me/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/blog/kejs-amocrm-dlja-agentstva-nedvizhimosti-avtomatizatsija-voronk/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/blog/kejs-avtomatizatsija-monitoringa-podpisok-i-vystavlenija-schetov/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/blog/kejs-internet-magazin-avtozapchastej-s-integratsiej-1s-50-000/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/blog/kejs-sajt-vizitka-dlja-chastnogo-psihologa-15-zajavok-v-mesjats/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/blog/kejs-seo-prodvizhenie-internet-magazina-mebeli-rost-trafika/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/blog/kejs-smm-dlja-fitnes-studii-rost-podpischikov-s-500-do-5000/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/blog/kejs-sozdanie-internet-magazina-mebeli-na-opencart-150-zaka/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/blog/kejs-sozdanie-korporativnogo-sajta-dlja-logisticheskoj-kompani/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/blog/kejs-vnedrenie-ai-sekretarja-dlja-stomatologicheskoj-kliniki-a/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/blog/kejs-vnedrenie-bitriks24-dlja-stroitelnoj-kompanii-rost-pro/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/blog/kejs-vyvod-sajta-juridicheskoj-kompanii-v-top-5-jandeksa-za-3-m/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/blog/kejs-zapusk-internet-magazina-detskoj-odezhdy-okupaemost-za/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/razrabotka-internet-magazina/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/razrabotka-sajtov/avtomatizaciya-billinga/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/razrabotka-sajtov/avtomatizaciya-billinga/demo/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
 </urlset>
