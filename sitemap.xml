@@ -37,8 +37,9 @@
   <url><loc>https://friendadmin.ru/mobilnaya-versiya-sajta/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/politika-konfidentsialnosti/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://friendadmin.ru/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://friendadmin.ru/blog/kak-prodvinut-sajt-v-jandekse/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://friendadmin.ru/blog/kak-zakazat-sajt/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/zakazat-analiz-sajta/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://friendadmin.ru/blog/kak-prodvinut-sajt-v-jandekse/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/skolko-stoit-razrabotka-ai-agenta-2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/ai-agenty-dlya-biznesa-2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/skolko-stoit-razrabotat-sajt-v-2026-godu/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -78,10 +79,4 @@
   <url><loc>https://friendadmin.ru/portfolio/kejs-sozdanie-korporativnogo-sajta-dlja-logisticheskoj-kompani/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://friendadmin.ru/portfolio/kejs-avtomatizatsija-monitoringa-podpisok-i-vystavlenija-schetov/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://friendadmin.ru/portfolio/kejs-salon-krasoty-ai-sekretar-ekonomija-70/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url>
-    <loc>https://friendadmin.ru/blog/google-promote-website/</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
 </urlset>
