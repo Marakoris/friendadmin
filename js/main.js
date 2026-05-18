@@ -294,10 +294,11 @@ if (contactForm) {
     var btn = form.querySelector('.btn');
     btn.disabled = true;
 
-    fetch('https://api.brandee.ru/api/contact/friendadmin', {
+    fetch('https://app.aideploy.ru/api/landing-lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
+        site: 'friendadmin',
         name: name,
         phone: phone,
         email: emailVal,
@@ -307,7 +308,7 @@ if (contactForm) {
     })
     .then(function(res) { return res.json(); })
     .then(function(data) {
-      if (data.ok) {
+      if (data.success || data.ok) {
         statusEl.textContent = i18n.t('form.success');
         statusEl.className = 'form__status form__status--success';
         form.reset();

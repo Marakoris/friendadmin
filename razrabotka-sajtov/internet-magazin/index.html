@@ -111,7 +111,7 @@
         <a href="/kontakty/" class="nav__link" data-i18n="nav.contacts">Контакты</a>
         <a href="/blog/" class="nav__link">Блог</a>
       </nav>
-      <a href="/kontakty/" class="btn btn--sm btn--header" data-i18n="nav.cta">Обсудить проект</a>
+      <a href="#shop-form" class="btn btn--sm btn--header">Обсудить проект</a>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </header>
@@ -502,11 +502,42 @@
       </div>
     </section>
 
-    <section class="cta">
+    <section class="section" id="shop-form">
       <div class="container">
-        <h2 class="cta__title" data-i18n="shop.ctaTitle">Запустите свой интернет-магазин</h2>
-        <p class="cta__text" data-i18n="shop.ctaText">Оставьте заявку на бесплатную консультацию. Мы изучим вашу нишу, рассчитаем стоимость разработки интернет-магазина и предложим оптимальное решение с учётом вашего бюджета и бизнес-задач. Средний срок запуска — 3-6 недель.</p>
-        <a href="/kontakty/" class="btn btn--lg" data-i18n="shop.ctaBtn">Оставить заявку</a>
+        <h2 class="section__title">Запустите свой интернет-магазин</h2>
+        <p class="section__desc">Оставьте заявку на бесплатную консультацию. Мы изучим вашу нишу, рассчитаем стоимость разработки интернет-магазина и предложим оптимальное решение с учётом вашего бюджета и бизнес-задач.</p>
+        <form class="form fade-in" id="shop-lead-form" style="max-width:560px;margin:0 auto">
+          <div style="position:absolute;left:-9999px"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+          <div class="form__group">
+            <label class="form__label" for="shop-name">Имя *</label>
+            <input class="form__input" type="text" id="shop-name" name="name" required placeholder="Ваше имя">
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="shop-phone">Телефон *</label>
+            <input class="form__input" type="tel" id="shop-phone" name="phone" required placeholder="+7 (___) ___-__-__">
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="shop-niche">Ниша / товары</label>
+            <input class="form__input" type="text" id="shop-niche" name="niche" placeholder="Например: одежда, электроника, продукты...">
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="shop-products">Примерное количество товаров</label>
+            <select class="form__select" id="shop-products" name="products">
+              <option value="">— Выберите —</option>
+              <option value="до 100">до 100</option>
+              <option value="100-500">100 – 500</option>
+              <option value="500-5000">500 – 5 000</option>
+              <option value="5000+">5 000+</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="shop-message">Комментарий</label>
+            <textarea class="form__textarea" id="shop-message" name="message" placeholder="Опишите задачу или задайте вопрос..." rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn--lg" style="width:100%">Получить расчёт стоимости</button>
+          <div class="form__status" id="shop-form-status"></div>
+          <p style="font-size:0.8rem;color:#94a3b8;margin-top:8px;text-align:center">Нажимая кнопку, вы соглашаетесь с <a href="/politika-konfidentsialnosti/" style="color:#2563eb">политикой конфиденциальности</a></p>
+        </form>
       </div>
     </section>
   </main>
@@ -532,6 +563,64 @@
   </footer>
 
   <script src="/js/main.js?v=2"></script>
+<script>
+(function(){
+  var form = document.getElementById('shop-lead-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var hp = form.querySelector('[name="website"]');
+    if (hp && hp.value) return;
+    var name = form.querySelector('[name="name"]').value.trim();
+    var phone = form.querySelector('[name="phone"]').value.trim();
+    var niche = form.querySelector('[name="niche"]').value.trim();
+    var products = form.querySelector('[name="products"]');
+    var productsVal = products ? products.value : '';
+    var message = form.querySelector('[name="message"]').value.trim();
+    var statusEl = document.getElementById('shop-form-status');
+    if (!name || !phone) {
+      statusEl.textContent = 'Заполните имя и телефон';
+      statusEl.className = 'form__status form__status--error';
+      return;
+    }
+    var btn = form.querySelector('.btn');
+    btn.disabled = true;
+    btn.textContent = 'Отправка...';
+    fetch('https://app.aideploy.ru/api/landing-lead', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        site: 'friendadmin',
+        name: name,
+        phone: phone,
+        service: 'Интернет-магазин',
+        message: (niche ? 'Ниша: ' + niche + '. ' : '') + (productsVal ? 'Товаров: ' + productsVal + '. ' : '') + (message || '')
+      })
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if (data.success) {
+        statusEl.textContent = 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.';
+        statusEl.className = 'form__status form__status--success';
+        form.reset();
+        if (typeof ym === 'function') ym(95899715, 'reachGoal', 'form_submit');
+        if (typeof gtag === 'function') gtag('event', 'form_submit', {event_category: 'lead'});
+      } else {
+        statusEl.textContent = 'Ошибка. Попробуйте позже или позвоните нам.';
+        statusEl.className = 'form__status form__status--error';
+      }
+    })
+    .catch(function(){
+      statusEl.textContent = 'Ошибка сети. Позвоните нам: +7 (961) 104-83-19';
+      statusEl.className = 'form__status form__status--error';
+    })
+    .finally(function(){
+      btn.disabled = false;
+      btn.textContent = 'Получить расчёт стоимости';
+    });
+  });
+})();
+</script>
 <script src="https://app.aideploy.ru/widget.js" data-agent="007e67f2-d9fd-494c-ac78-1156c5567682"></script>
 <noscript><div><img src="https://mc.yandex.ru/watch/95899715" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
 </body>
