@@ -295,6 +295,38 @@
     }
     .quiz .form__select option { background: #1e293b; color: #fff; }
 
+    /* Quiz options */
+    .quiz__options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .quiz__opt {
+      cursor: pointer;
+    }
+    .quiz__opt input { display: none; }
+    .quiz__opt span {
+      display: block;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .quiz__opt span:hover {
+      background: rgba(37,99,235,0.15);
+      border-color: rgba(37,99,235,0.4);
+    }
+    .quiz__opt input:checked + span {
+      background: rgba(37,99,235,0.25);
+      border-color: #2563eb;
+      color: #fff;
+      font-weight: 600;
+    }
+
     @media (max-width: 768px) {
       .lp-hero { padding: 100px 0 60px; }
       .lp-hero__title { font-size: 1.8rem; }
@@ -543,17 +575,17 @@
         <h2 class="section-title">Гарантии</h2>
         <div class="grid grid--2" style="margin-top:40px">
           <div class="guarantee">
-            <div class="guarantee__icon">₽</div>
+            <div class="guarantee__icon">📈</div>
             <div>
-              <div class="guarantee__title">Оплата за результат</div>
-              <div class="guarantee__text">Работаем за процент от оборота — вы платите, только когда магазин зарабатывает</div>
+              <div class="guarantee__title">Процент от оборота</div>
+              <div class="guarantee__text">Для крупных проектов: вы платите только когда магазин зарабатывает. Мы заинтересованы в вашем росте</div>
             </div>
           </div>
           <div class="guarantee">
-            <div class="guarantee__icon">📋</div>
+            <div class="guarantee__icon">₽</div>
             <div>
-              <div class="guarantee__title">Фиксированная стоимость</div>
-              <div class="guarantee__text">Если выбираете разовую оплату — цена в договоре. Никаких доплат за «непредвиденные работы»</div>
+              <div class="guarantee__title">Разовая оплата</div>
+              <div class="guarantee__text">Для небольших магазинов: фиксированная цена, оплата 50/50, дальше ведёте сами</div>
             </div>
           </div>
           <div class="guarantee">
@@ -564,10 +596,10 @@
             </div>
           </div>
           <div class="guarantee">
-            <div class="guarantee__icon">📈</div>
+            <div class="guarantee__icon">🔒</div>
             <div>
-              <div class="guarantee__title">Заинтересованы в вашем росте</div>
-              <div class="guarantee__text">Работаем за процент от оборота — чем больше вы зарабатываете, тем больше зарабатываем мы</div>
+              <div class="guarantee__title">Всё ваше</div>
+              <div class="guarantee__text">Домен, код, база клиентов — полностью принадлежат вам. Никакой привязки к нашей платформе</div>
             </div>
           </div>
         </div>
@@ -602,40 +634,77 @@
     <!-- FORM -->
     <section class="section" id="shop-form">
       <div class="container">
-        <div class="quiz">
-          <div class="quiz__title">Рассчитайте стоимость вашего магазина</div>
-          <div class="quiz__sub">Заполните форму — мы подготовим индивидуальное предложение за 1 рабочий день</div>
+        <div class="quiz" id="shop-quiz">
+          <div class="quiz__title">Рассчитайте стоимость за 30 секунд</div>
+          <div class="quiz__sub">Ответьте на 4 вопроса — мы подготовим индивидуальное предложение</div>
+          <div class="quiz__progress" style="background:rgba(255,255,255,0.1);border-radius:100px;height:6px;margin-bottom:32px">
+            <div class="quiz__bar" style="background:linear-gradient(90deg,#2563eb,#06b6d4);height:100%;border-radius:100px;width:25%;transition:width 0.3s"></div>
+          </div>
           <form id="shop-lead-form">
             <div style="position:absolute;left:-9999px"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
-            <div class="form__group">
-              <label class="form__label" for="shop-name">Имя *</label>
-              <input class="form__input" type="text" id="shop-name" name="name" required placeholder="Ваше имя">
+
+            <!-- Step 1: Niche -->
+            <div class="quiz__step" data-step="1">
+              <div class="form__label" style="font-size:1.1rem;margin-bottom:16px">Что вы продаёте?</div>
+              <div class="quiz__options">
+                <label class="quiz__opt"><input type="radio" name="niche" value="Одежда и обувь"><span>👗 Одежда и обувь</span></label>
+                <label class="quiz__opt"><input type="radio" name="niche" value="Электроника"><span>📱 Электроника</span></label>
+                <label class="quiz__opt"><input type="radio" name="niche" value="Продукты питания"><span>🍎 Продукты питания</span></label>
+                <label class="quiz__opt"><input type="radio" name="niche" value="Мебель и интерьер"><span>🛋 Мебель и интерьер</span></label>
+                <label class="quiz__opt"><input type="radio" name="niche" value="Косметика"><span>💄 Косметика</span></label>
+                <label class="quiz__opt"><input type="radio" name="niche" value="Автозапчасти"><span>🔧 Автозапчасти</span></label>
+                <label class="quiz__opt"><input type="radio" name="niche" value="Стройматериалы"><span>🏗 Стройматериалы</span></label>
+                <label class="quiz__opt"><input type="radio" name="niche" value="Другое"><span>📦 Другое</span></label>
+              </div>
             </div>
-            <div class="form__group">
-              <label class="form__label" for="shop-phone">Телефон *</label>
-              <input class="form__input" type="tel" id="shop-phone" name="phone" required placeholder="+7 (___) ___-__-__">
+
+            <!-- Step 2: Products count -->
+            <div class="quiz__step" data-step="2" style="display:none">
+              <div class="form__label" style="font-size:1.1rem;margin-bottom:16px">Сколько товаров в каталоге?</div>
+              <div class="quiz__options">
+                <label class="quiz__opt"><input type="radio" name="products" value="до 100"><span>до 100</span></label>
+                <label class="quiz__opt"><input type="radio" name="products" value="100-1000"><span>100 – 1 000</span></label>
+                <label class="quiz__opt"><input type="radio" name="products" value="1000-10000"><span>1 000 – 10 000</span></label>
+                <label class="quiz__opt"><input type="radio" name="products" value="10000-50000"><span>10 000 – 50 000</span></label>
+                <label class="quiz__opt"><input type="radio" name="products" value="50000+"><span>50 000+</span></label>
+              </div>
             </div>
-            <div class="form__group">
-              <label class="form__label" for="shop-niche">Что продаёте?</label>
-              <input class="form__input" type="text" id="shop-niche" name="niche" placeholder="Например: одежда, электроника, продукты...">
+
+            <!-- Step 3: Features -->
+            <div class="quiz__step" data-step="3" style="display:none">
+              <div class="form__label" style="font-size:1.1rem;margin-bottom:16px">Что важно для вас? <span style="font-size:0.85rem;color:#64748b">(можно выбрать несколько)</span></div>
+              <div class="quiz__options quiz__options--multi">
+                <label class="quiz__opt"><input type="checkbox" name="features" value="Мобильное приложение"><span>📱 Мобильное приложение</span></label>
+                <label class="quiz__opt"><input type="checkbox" name="features" value="Интеграция с 1С"><span>🔗 Интеграция с 1С</span></label>
+                <label class="quiz__opt"><input type="checkbox" name="features" value="Онлайн-оплата"><span>💳 Онлайн-оплата</span></label>
+                <label class="quiz__opt"><input type="checkbox" name="features" value="Доставка (СДЭК, Boxberry)"><span>🚚 Доставка (СДЭК, Boxberry)</span></label>
+                <label class="quiz__opt"><input type="checkbox" name="features" value="AI-поиск и рекомендации"><span>🤖 AI-поиск и рекомендации</span></label>
+                <label class="quiz__opt"><input type="checkbox" name="features" value="Программа лояльности"><span>🎁 Программа лояльности</span></label>
+                <label class="quiz__opt"><input type="checkbox" name="features" value="SMS и email-рассылки"><span>📧 SMS и email-рассылки</span></label>
+                <label class="quiz__opt"><input type="checkbox" name="features" value="Аналитика продаж"><span>📊 Аналитика продаж</span></label>
+              </div>
+              <button type="button" class="btn btn--lg quiz__next" style="width:100%;margin-top:20px">Далее →</button>
             </div>
-            <div class="form__group">
-              <label class="form__label" for="shop-products">Сколько товаров в каталоге?</label>
-              <select class="form__select" id="shop-products" name="products">
-                <option value="">— Выберите —</option>
-                <option value="до 100">до 100</option>
-                <option value="100-1000">100 – 1 000</option>
-                <option value="1000-10000">1 000 – 10 000</option>
-                <option value="10000+">10 000+</option>
-              </select>
+
+            <!-- Step 4: Contacts -->
+            <div class="quiz__step" data-step="4" style="display:none">
+              <div class="form__label" style="font-size:1.1rem;margin-bottom:16px">Куда отправить расчёт?</div>
+              <div class="form__group">
+                <label class="form__label" for="shop-name">Имя *</label>
+                <input class="form__input" type="text" id="shop-name" name="name" required placeholder="Ваше имя">
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="shop-phone">Телефон *</label>
+                <input class="form__input" type="tel" id="shop-phone" name="phone" required placeholder="+7 (___) ___-__-__">
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="shop-contact">Telegram или Email</label>
+                <input class="form__input" type="text" id="shop-contact" name="contact" placeholder="@username или email">
+              </div>
+              <button type="submit" class="btn btn--lg" style="width:100%">Получить расчёт стоимости</button>
+              <div class="form__status" id="shop-form-status"></div>
+              <p style="font-size:0.8rem;color:#64748b;margin-top:8px;text-align:center">Нажимая кнопку, вы соглашаетесь с <a href="/politika-konfidentsialnosti/" style="color:#93c5fd">политикой конфиденциальности</a></p>
             </div>
-            <div class="form__group">
-              <label class="form__label" for="shop-message">Комментарий</label>
-              <textarea class="form__textarea" id="shop-message" name="message" placeholder="Опишите задачу или задайте вопрос..." rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn--lg" style="width:100%">Получить расчёт стоимости</button>
-            <div class="form__status" id="shop-form-status"></div>
-            <p style="font-size:0.8rem;color:#64748b;margin-top:8px;text-align:center">Нажимая кнопку, вы соглашаетесь с <a href="/politika-konfidentsialnosti/" style="color:#93c5fd">политикой конфиденциальности</a></p>
           </form>
         </div>
       </div>
@@ -664,25 +733,62 @@
 (function(){
   var form = document.getElementById('shop-lead-form');
   if (!form) return;
+  var currentStep = 1;
+  var totalSteps = 4;
+  var bar = document.querySelector('.quiz__bar');
+
+  function showStep(n) {
+    currentStep = n;
+    form.querySelectorAll('.quiz__step').forEach(function(s) {
+      s.style.display = s.dataset.step == n ? '' : 'none';
+    });
+    bar.style.width = (n / totalSteps * 100) + '%';
+  }
+
+  function goNext() {
+    if (currentStep < totalSteps) showStep(currentStep + 1);
+  }
+
+  // Auto-advance on radio select (steps 1 & 2)
+  form.querySelectorAll('.quiz__step[data-step="1"] input[type="radio"], .quiz__step[data-step="2"] input[type="radio"]').forEach(function(r) {
+    r.addEventListener('change', function() { setTimeout(goNext, 300); });
+  });
+
+  // Step 3 "Next" button
+  var nextBtn = form.querySelector('.quiz__next');
+  if (nextBtn) nextBtn.addEventListener('click', goNext);
+
+  // Submit
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     var hp = form.querySelector('[name="website"]');
     if (hp && hp.value) return;
     var name = form.querySelector('[name="name"]').value.trim();
     var phone = form.querySelector('[name="phone"]').value.trim();
-    var niche = form.querySelector('[name="niche"]').value.trim();
-    var products = form.querySelector('[name="products"]');
-    var productsVal = products ? products.value : '';
-    var message = form.querySelector('[name="message"]').value.trim();
+    var contact = form.querySelector('[name="contact"]').value.trim();
     var statusEl = document.getElementById('shop-form-status');
     if (!name || !phone) {
       statusEl.textContent = 'Заполните имя и телефон';
       statusEl.className = 'form__status form__status--error';
       return;
     }
-    var btn = form.querySelector('.btn');
+    // Collect quiz answers
+    var nicheEl = form.querySelector('[name="niche"]:checked');
+    var niche = nicheEl ? nicheEl.value : '';
+    var productsEl = form.querySelector('[name="products"]:checked');
+    var products = productsEl ? productsEl.value : '';
+    var features = [];
+    form.querySelectorAll('[name="features"]:checked').forEach(function(c) { features.push(c.value); });
+
+    var btn = form.querySelector('[type="submit"]');
     btn.disabled = true;
     btn.textContent = 'Отправка...';
+
+    var msg = '';
+    if (niche) msg += 'Ниша: ' + niche + '. ';
+    if (products) msg += 'Товаров: ' + products + '. ';
+    if (features.length) msg += 'Нужно: ' + features.join(', ') + '. ';
+
     fetch('https://app.aideploy.ru/api/landing-lead', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -690,16 +796,18 @@
         site: 'friendadmin',
         name: name,
         phone: phone,
-        service: 'Интернет-магазин',
-        message: (niche ? 'Ниша: ' + niche + '. ' : '') + (productsVal ? 'Товаров: ' + productsVal + '. ' : '') + (message || '')
+        contact: contact,
+        service: 'Интернет-магазин (квиз)',
+        message: msg
       })
     })
     .then(function(r){ return r.json(); })
     .then(function(data){
       if (data.success) {
-        statusEl.textContent = 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.';
-        statusEl.className = 'form__status form__status--success';
-        form.reset();
+        document.querySelector('.quiz__title').textContent = 'Спасибо!';
+        document.querySelector('.quiz__sub').textContent = 'Мы подготовим расчёт и свяжемся с вами в ближайшее время.';
+        bar.style.width = '100%';
+        form.style.display = 'none';
         if (typeof ym === 'function') ym(95899715, 'reachGoal', 'form_submit');
         if (typeof gtag === 'function') gtag('event', 'form_submit', {event_category: 'lead'});
       } else {
