@@ -695,7 +695,7 @@
               </div>
               <div class="form__group">
                 <label class="form__label" for="shop-phone">Телефон *</label>
-                <input class="form__input" type="tel" id="shop-phone" name="phone" required placeholder="+7 (___) ___-__-__">
+                <input class="form__input" type="tel" id="shop-phone" name="phone" required placeholder="+7 (___) ___-__-__" value="+7 ">
               </div>
               <div class="form__group">
                 <label class="form__label" for="shop-contact">Telegram или Email</label>
@@ -731,6 +731,41 @@
   <script src="/js/main.js?v=2"></script>
 <script>
 (function(){
+  // Phone mask: +7 (___) ___-__-__
+  var phoneInput = document.getElementById('shop-phone');
+  if (phoneInput) {
+    function formatPhone(val) {
+      var digits = val.replace(/\D/g, '');
+      if (digits.length === 0) return '+7 ';
+      if (digits[0] === '8' || digits[0] === '7') digits = digits.substring(1);
+      var f = '+7 ';
+      if (digits.length > 0) f += '(' + digits.substring(0, 3);
+      if (digits.length >= 3) f += ') ' + digits.substring(3, 6);
+      if (digits.length >= 6) f += '-' + digits.substring(6, 8);
+      if (digits.length >= 8) f += '-' + digits.substring(8, 10);
+      return f;
+    }
+    phoneInput.addEventListener('input', function() {
+      var pos = this.selectionStart;
+      var oldLen = this.value.length;
+      this.value = formatPhone(this.value);
+      var newLen = this.value.length;
+      var newPos = pos + (newLen - oldLen);
+      if (newPos < 4) newPos = 4;
+      this.setSelectionRange(newPos, newPos);
+    });
+    phoneInput.addEventListener('focus', function() {
+      if (!this.value || this.value === '+7') this.value = '+7 ';
+      var len = this.value.length;
+      this.setSelectionRange(len, len);
+    });
+    phoneInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Backspace' && this.value.length <= 4) {
+        e.preventDefault();
+      }
+    });
+  }
+
   var form = document.getElementById('shop-lead-form');
   if (!form) return;
   var currentStep = 1;
