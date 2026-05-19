@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Автоматическое распределение сделок в AmoCRM — кейс | FriendAdmin</title>
+  <meta name="description" content="Кейс: разработка системы автоматического распределения входящих сделок в AmoCRM. Round-robin ротация, лимиты нагрузки, таймеры реакции, веб-дашборд для управления.">
+  <meta name="keywords" content="AmoCRM, распределение сделок, автоматизация продаж, round-robin, CRM интеграция, кейс amoCRM">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://friendadmin.ru/portfolio/crm-amocrm-distribution/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Автоматическое распределение сделок в AmoCRM — кейс | FriendAdmin">
+  <meta property="og:description" content="Разработка системы автоматического распределения входящих сделок между менеджерами в AmoCRM. Round-robin, лимиты, таймеры, веб-дашборд.">
+  <meta property="og:url" content="https://friendadmin.ru/portfolio/crm-amocrm-distribution/">
+  <meta property="og:site_name" content="FriendAdmin">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image" content="https://friendadmin.ru/portfolio/crm-amocrm-distribution/img/demo-counters.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Автоматическое распределение сделок в AmoCRM — кейс | FriendAdmin">
+  <meta name="twitter:description" content="Разработка системы автоматического распределения сделок между менеджерами в AmoCRM.">
+  <link rel="stylesheet" href="/css/style.css?v=2">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Главная",
+        "item": "https://friendadmin.ru/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Портфолио",
+        "item": "https://friendadmin.ru/portfolio/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Распределение сделок AmoCRM",
+        "item": "https://friendadmin.ru/portfolio/crm-amocrm-distribution/"
+      }
+    ]
+  }
+  </script>
+  <script src="/js/antibot.js?v=2" defer></script>
+  <style>
+    .case-img { width: 100%; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); margin: 16px 0; }
+    .case-img-caption { font-size: 14px; color: #888; text-align: center; margin-bottom: 24px; }
+  </style>
+</head>
+<body data-page="portfolio">
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="logo"><img src="/img/favicon.svg" alt="FriendAdmin" class="logo__icon" width="36" height="36"><span class="logo__text">FriendAdmin</span></a>
+      <nav class="nav" id="nav">
+        <a href="/uslugi/" class="nav__link">Услуги</a>
+        <a href="/portfolio/" class="nav__link">Портфолио</a>
+        <a href="/o-kompanii/" class="nav__link">О компании</a>
+        <a href="/kontakty/" class="nav__link">Контакты</a>
+        <a href="/blog/" class="nav__link">Блог</a>
+      </nav>
+      <a href="/kontakty/" class="btn btn--sm btn--header">Обсудить проект</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="breadcrumb">
+      <div class="container">
+        <ul class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/">Главная</a></li>
+          <li class="breadcrumb__item"><a href="/portfolio/">Портфолио</a></li>
+          <li class="breadcrumb__item active">Распределение сделок AmoCRM</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="hero hero--sub">
+      <div class="container">
+        <h1 class="hero__title">Автоматическое распределение сделок в AmoCRM</h1>
+        <p class="hero__subtitle">Замена 19 ботов-распределителей единым интеллектуальным сервисом с веб-дашбордом</p>
+      </div>
+    </section>
+
+    <!-- Задача -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Задача</h2>
+        <div class="prose">
+          <p>Компания-клиент использовала AmoCRM для управления продажами. Входящие заявки распределялись между пятью менеджерами через 19 отдельных Salesbot-ботов в AmoCRM. Каждый бот отвечал за своё правило маршрутизации, а при изменении состава команды или графика работы приходилось вручную перенастраивать десятки ботов.</p>
+          <p><strong>Проблемы:</strong></p>
+          <ul>
+            <li>19 ботов сложно поддерживать — ошибки при изменении расписания</li>
+            <li>Нет учёта текущей загрузки менеджера (количество активных встреч)</li>
+            <li>Нет контроля реакции — если менеджер не берёт заявку, она «зависает»</li>
+            <li>Нет единого интерфейса для управления — всё разбросано по настройкам ботов</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Решение -->
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Решение</h2>
+        <div class="prose">
+          <p>Мы разработали отдельный микросервис, который заменил все 19 ботов единой системой распределения с веб-панелью управления.</p>
+        </div>
+        <div class="cards-grid cards-grid--3">
+          <div class="card">
+            <h3 class="card__title">Умная ротация</h3>
+            <p class="card__text">Round-robin с учётом статуса менеджера, рабочего расписания и текущей нагрузки. Если менеджер на встрече, в отпуске или перегружен — сделка идёт следующему.</p>
+          </div>
+          <div class="card">
+            <h3 class="card__title">Контроль нагрузки</h3>
+            <p class="card__text">Система автоматически запрашивает данные из AmoCRM и считает активные встречи каждого менеджера. Индивидуальные лимиты для каждого сотрудника.</p>
+          </div>
+          <div class="card">
+            <h3 class="card__title">Таймер реакции</h3>
+            <p class="card__text">20 минут на принятие заявки. Если менеджер не отреагировал — сделка автоматически переназначается следующему свободному менеджеру.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Скриншот: дашборд -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Дашборд управления</h2>
+        <div class="prose">
+          <p>Веб-панель показывает в реальном времени состояние каждого менеджера: статус, количество активных встреч, дневную нагрузку и зависшие сделки.</p>
+        </div>
+        <img src="img/demo-counters.png" alt="Дашборд распределения сделок AmoCRM — нагрузка менеджеров и таймеры реакции" class="case-img" loading="lazy" width="1400" height="550">
+        <div class="case-img-caption">Панель нагрузки менеджеров с таймерами реакции</div>
+      </div>
+    </section>
+
+    <!-- Скриншот: расписание -->
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Гибкое расписание</h2>
+        <div class="prose">
+          <p>Для каждого менеджера задаётся индивидуальное расписание по дням недели, статус (свободен, на встрече, перерыв, отпуск) и персональный лимит встреч. Изменения применяются мгновенно — без перезапуска и перенастройки ботов.</p>
+        </div>
+        <img src="img/demo-managers.png" alt="Таблица менеджеров AmoCRM — расписание, статусы, лимиты" class="case-img" loading="lazy" width="1400" height="250">
+        <div class="case-img-caption">Таблица менеджеров с расписанием и индивидуальными лимитами</div>
+      </div>
+    </section>
+
+    <!-- Скриншот: лог -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Лог распределения</h2>
+        <div class="prose">
+          <p>Все действия фиксируются: какая сделка, кому назначена, когда. Если сработал таймер и произошло переназначение — это тоже видно в логе. Полная прозрачность для руководителя отдела продаж.</p>
+        </div>
+        <img src="img/demo-log.png" alt="Лог распределения сделок AmoCRM — история назначений и переназначений" class="case-img" loading="lazy" width="1100" height="350">
+        <div class="case-img-caption">История распределения и автоматических переназначений</div>
+      </div>
+    </section>
+
+    <!-- Как это работает -->
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Как это работает</h2>
+        <ul class="feature-list">
+          <li class="feature-list__item">Новая сделка создаётся в AmoCRM (заявка с сайта, звонок, мессенджер)</li>
+          <li class="feature-list__item">AmoCRM отправляет webhook в наш сервис</li>
+          <li class="feature-list__item">Сервис проверяет статус, расписание и загрузку каждого менеджера</li>
+          <li class="feature-list__item">Назначает сделку следующему свободному менеджеру по ротации</li>
+          <li class="feature-list__item">Запускает 20-минутный таймер на реакцию</li>
+          <li class="feature-list__item">Если менеджер не принял заявку — автоматическое переназначение</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Результаты -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Результаты</h2>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat__num">19 &rarr; 1</div>
+            <div class="stat__label">Ботов заменено одним сервисом</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">20 мин</div>
+            <div class="stat__label">Максимум ожидания клиента</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">0</div>
+            <div class="stat__label">Потерянных заявок</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">5 сек</div>
+            <div class="stat__label">Время изменения настроек</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Технологии -->
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Технологии</h2>
+        <div class="cards-grid cards-grid--3">
+          <div class="card">
+            <h3 class="card__title">AmoCRM API v4</h3>
+            <p class="card__text">Интеграция через OAuth2: автоматическое назначение сделок, получение данных о нагрузке менеджеров, добавление примечаний в карточку сделки.</p>
+          </div>
+          <div class="card">
+            <h3 class="card__title">Python + FastAPI</h3>
+            <p class="card__text">Асинхронный веб-сервис с фоновыми задачами для проверки таймеров. Минимальные ресурсы, высокая надёжность.</p>
+          </div>
+          <div class="card">
+            <h3 class="card__title">Docker</h3>
+            <p class="card__text">Контейнеризация для простого деплоя и обновления. Автоматические бэкапы конфигурации.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container">
+        <h2 class="cta__title">Нужна автоматизация AmoCRM?</h2>
+        <p class="cta__text">Настроим распределение заявок, интеграции и автоматизацию под ваши бизнес-процессы. Бесплатная консультация.</p>
+        <a href="/kontakty/" class="btn btn--lg">Обсудить проект</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><div class="footer__logo"><img src="/img/favicon.svg" alt="FriendAdmin" width="28" height="28"><span>FriendAdmin</span></div><p class="footer__desc">Веб-студия полного цикла. Создаём сайты, внедряем CRM, продвигаем бизнес в интернете с 2014 года.</p></div>
+        <div><div class="footer__heading">Услуги</div><div class="footer__links"><a href="/razrabotka-sajtov/">Разработка сайтов</a><a href="/crm-sistemy/">CRM-системы</a><a href="/seo-prodvizhenie/">SEO-продвижение</a><a href="/it-podderzhka/">IT-поддержка</a></div></div>
+            <a href="/razrabotka-sajtov/ai-agenty/">AI-агенты и чат-боты</a>
+            <a href="/razrabotka-sajtov/ai-sekretar/">AI-консультант</a>
+            <a href="/razrabotka-sajtov/avtomatizaciya-billinga/">Автоматизация биллинга</a>
+            <a href="/analitika-dlya-biznesa/">Аналитика для бизнеса</a>
+        <div><div class="footer__heading">Компания</div><div class="footer__links"><a href="/o-kompanii/">О компании</a><a href="/portfolio/">Портфолио</a><a href="/kontakty/">Контакты</a><a href="/politika-konfidentsialnosti/">Политика конфиденциальности</a></div></div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__copy">&copy; 2014&ndash;2026 FriendAdmin. Все права защищены.</div>
+        <div class="footer__socials">
+          <a href="https://t.me/friend_admin" target="_blank" rel="noopener" aria-label="Telegram"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js?v=2"></script>
+  <script src="https://app.aideploy.ru/widget.js" data-agent="007e67f2-d9fd-494c-ac78-1156c5567682"></script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/95899715" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+</body>
+</html>
