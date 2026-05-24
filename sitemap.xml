@@ -33,7 +33,6 @@
   <url><loc>https://friendadmin.ru/razrabotka-sajtov/ai-sekretar/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://friendadmin.ru/razrabotka-sajtov/ai-avtomatizaciya/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://friendadmin.ru/razrabotka-sajtov/ai-agenty/chto-takoe-ai-agent/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://friendadmin.ru/landing/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/mobilnaya-versiya-sajta/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/politika-konfidentsialnosti/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://friendadmin.ru/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -85,12 +84,6 @@
   <url><loc>https://friendadmin.ru/portfolio/kejs-sozdanie-korporativnogo-sajta-dlja-logisticheskoj-kompani/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://friendadmin.ru/portfolio/kejs-avtomatizatsija-monitoringa-podpisok-i-vystavlenija-schetov/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://friendadmin.ru/portfolio/kejs-salon-krasoty-ai-sekretar-ekonomija-70/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url>
-    <loc>https://friendadmin.ru/blog/google-promote-website/</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
   <url>
     <loc>https://friendadmin.ru/blog/kejs-ai-sekretar-dlja-avtoservisa-obrabotka-200-zajavok-v-me/</loc>
     <lastmod>2026-05-23</lastmod>
@@ -176,12 +169,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://friendadmin.ru/razrabotka-internet-magazina/</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://friendadmin.ru/razrabotka-sajtov/avtomatizaciya-billinga/</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -189,12 +176,6 @@
   </url>
   <url>
     <loc>https://friendadmin.ru/razrabotka-sajtov/avtomatizaciya-billinga/demo/</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/seo/</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
