@@ -37,6 +37,8 @@
   <url><loc>https://friendadmin.ru/mobilnaya-versiya-sajta/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/politika-konfidentsialnosti/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://friendadmin.ru/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://friendadmin.ru/blog/chem-bitriks24-luchshe-amocrm/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://friendadmin.ru/blog/google-prodvizhenie/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/skolko-vremeni-delaetsja-sajt/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/kak-vnedrit-crm-v-otdel-prodazh/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/kakuju-crm-vybrat/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -50,7 +52,6 @@
   <url><loc>https://friendadmin.ru/blog/kak-zakazat-sajt/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/bitriks24-ili-amocrm/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/chto-nuzhno-dlja-sozdanija-sajta/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://friendadmin.ru/blog/google-prodvizhenie/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/zakazat-analiz-sajta/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/kak-prodvinut-sajt-v-jandekse/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/skolko-stoit-razrabotka-ai-agenta-2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -86,22 +87,4 @@
   <url><loc>https://friendadmin.ru/portfolio/kejs-sozdanie-korporativnogo-sajta-dlja-logisticheskoj-kompani/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://friendadmin.ru/portfolio/kejs-avtomatizatsija-monitoringa-podpisok-i-vystavlenija-schetov/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://friendadmin.ru/portfolio/kejs-salon-krasoty-ai-sekretar-ekonomija-70/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url>
-    <loc>https://friendadmin.ru/portfolio/crm-amocrm-distribution/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/razrabotka-sajtov/avtomatizaciya-billinga/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://friendadmin.ru/razrabotka-sajtov/avtomatizaciya-billinga/demo/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
 </urlset>
