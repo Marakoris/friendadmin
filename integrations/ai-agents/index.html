@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Agents — виджет AI-агентов для amoCRM | FriendAdmin</title>
+  <meta name="description" content="Виджет AI-Agents для amoCRM: AI-агенты автоматически общаются с клиентами, создают лиды и сделки в CRM. Омниканальность: Telegram, VK, Avito, онлайн-чат. Оплата за диалог от 10 руб.">
+  <meta name="keywords" content="AI агент amoCRM, виджет amoCRM AI, чат-бот amoCRM, автоматизация продаж amoCRM, AIDeploy, AI лиды amoCRM, amoMarket виджет">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="canonical" href="https://friendadmin.ru/integrations/ai-agents/">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://friendadmin.ru/integrations/ai-agents/">
+  <meta property="og:title" content="AI-Agents — виджет AI-агентов для amoCRM">
+  <meta property="og:description" content="AI-агенты для amoCRM: автоматическое общение с клиентами, создание лидов, омниканальность. Оплата за диалог от 10 руб.">
+  <meta property="og:image" content="https://friendadmin.ru/img/og-image.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI-Agents — виджет AI-агентов для amoCRM">
+  <meta name="twitter:description" content="AI-агенты для amoCRM: автоматическое общение с клиентами, создание лидов, омниканальность.">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css?v=2">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://friendadmin.ru/"},
+      {"@type": "ListItem", "position": 2, "name": "Интеграции", "item": "https://friendadmin.ru/integrations/"},
+      {"@type": "ListItem", "position": 3, "name": "AI-Agents", "item": "https://friendadmin.ru/integrations/ai-agents/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AI-Agents — умные агенты для amoCRM",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://app.aideploy.ru",
+    "offers": {
+      "@type": "Offer",
+      "price": "10",
+      "priceCurrency": "RUB",
+      "description": "Оплата за диалог: 10–20 руб.",
+      "priceValidUntil": "2027-12-31",
+      "availability": "https://schema.org/InStock"
+    },
+    "description": "AI-агенты для amoCRM: автоматическое общение с клиентами через Telegram, VK, Avito, онлайн-чат. Создание лидов и сделок в CRM с полной историей переписки.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "FriendAdmin",
+      "url": "https://friendadmin.ru"
+    }
+  }
+  </script>
+  <script src="/js/antibot.js?v=2" defer></script>
+  <style>
+    .product-hero { padding: 60px 0 40px; }
+    .product-hero__inner { display: flex; gap: 48px; align-items: flex-start; }
+    .product-hero__content { flex: 1; }
+    .product-hero__badge { display: inline-block; padding: 4px 14px; background: #eff6ff; color: #2563eb; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 16px; }
+    .product-hero h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.2; color: #0f172a; margin-bottom: 16px; }
+    .product-hero__desc { font-size: 1.05rem; color: #475569; line-height: 1.7; margin-bottom: 28px; }
+    .product-hero__price { display: flex; align-items: baseline; gap: 12px; margin-bottom: 24px; }
+    .product-hero__amount { font-size: 2rem; font-weight: 800; color: #0f172a; }
+    .product-hero__period { font-size: 0.95rem; color: #64748b; }
+    .product-hero__trial { display: inline-block; padding: 6px 16px; background: #f0fdf4; color: #166534; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 28px; }
+    .product-hero__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .feature-item { padding: 28px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; transition: transform 0.2s, box-shadow 0.2s; }
+    .feature-item:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); }
+    .feature-item__icon { width: 48px; height: 48px; background: linear-gradient(135deg, #eff6ff, #dbeafe); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: #2563eb; }
+    .feature-item__title { font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+    .feature-item__text { font-size: 0.88rem; color: #64748b; line-height: 1.6; }
+
+    .how-it-works { background: #f8fafc; padding: 60px 0; }
+    .how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 32px; }
+    .how-step { text-align: center; position: relative; }
+    .how-step__num { width: 48px; height: 48px; background: linear-gradient(135deg, #2563eb, #06b6d4); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 800; margin: 0 auto 16px; }
+    .how-step__title { font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+    .how-step__text { font-size: 0.82rem; color: #64748b; line-height: 1.5; }
+
+    .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .channel-card { display: flex; align-items: center; gap: 12px; padding: 16px 20px; background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; transition: transform 0.2s, box-shadow 0.2s; }
+    .channel-card:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(0,0,0,0.05); }
+    .channel-card__icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+    .channel-card__name { font-weight: 700; font-size: 0.95rem; color: #0f172a; }
+    .channel-card__desc { font-size: 0.8rem; color: #64748b; }
+
+    .setup-steps { counter-reset: step; }
+    .setup-step { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid #e2e8f0; }
+    .setup-step:last-child { border-bottom: none; }
+    .setup-step::before { counter-increment: step; content: counter(step); width: 36px; height: 36px; min-width: 36px; background: #eff6ff; color: #2563eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+    .setup-step__content h3 { font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+    .setup-step__content p { font-size: 0.85rem; color: #64748b; line-height: 1.5; }
+
+    .pricing-card { background: #fff; border: 2px solid #2563eb; border-radius: 16px; padding: 40px; text-align: center; max-width: 480px; margin: 0 auto; }
+    .pricing-card__price { font-size: 2.8rem; font-weight: 800; color: #0f172a; }
+    .pricing-card__period { font-size: 1rem; color: #64748b; margin-bottom: 8px; }
+    .pricing-card__trial { color: #166534; font-weight: 600; font-size: 0.95rem; margin-bottom: 20px; }
+    .pricing-card__features { text-align: left; margin: 24px 0; }
+    .pricing-card__feature { display: flex; align-items: center; gap: 10px; padding: 8px 0; font-size: 0.9rem; color: #334155; }
+    .pricing-card__feature::before { content: "\2713"; color: #16a34a; font-weight: 700; }
+
+    .section__title { font-size: 1.8rem; font-weight: 800; color: #0f172a; text-align: center; margin-bottom: 12px; }
+    .section__sub { font-size: 0.95rem; color: #64748b; text-align: center; margin-bottom: 40px; }
+
+    .contact-info { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+    .contact-info a { display: flex; align-items: center; gap: 8px; color: #2563eb; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+    .contact-info a:hover { text-decoration: underline; }
+
+    @media (max-width: 1024px) {
+      .features-grid, .channels-grid { grid-template-columns: repeat(2, 1fr); }
+      .how-steps { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .product-hero__inner { flex-direction: column; gap: 24px; }
+      .product-hero h1 { font-size: 1.6rem; }
+      .features-grid, .channels-grid { grid-template-columns: 1fr; }
+      .how-steps { grid-template-columns: 1fr; }
+      .pricing-card { padding: 28px; }
+    }
+  </style>
+</head>
+<body data-page="integrations">
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="logo"><img src="/img/favicon.svg" alt="FriendAdmin" class="logo__icon" width="36" height="36"><span class="logo__text">FriendAdmin</span></a>
+      <nav class="nav" id="nav">
+        <a href="/uslugi/" class="nav__link">Услуги</a>
+        <a href="/portfolio/" class="nav__link">Портфолио</a>
+        <a href="/o-kompanii/" class="nav__link">О компании</a>
+        <a href="/kontakty/" class="nav__link">Контакты</a>
+        <a href="/blog/" class="nav__link">Блог</a>
+      </nav>
+      <a href="/kontakty/" class="btn btn--sm btn--header">Обсудить проект</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="breadcrumb"><div class="container"><a href="/">Главная</a><span class="breadcrumb__sep">/</span><a href="/integrations/">Интеграции</a><span class="breadcrumb__sep">/</span><span>AI-Agents</span></div></div>
+
+  <!-- Hero -->
+  <section class="product-hero">
+    <div class="container">
+      <div class="product-hero__inner fade-in">
+        <div class="product-hero__content">
+          <span class="product-hero__badge">Виджет для amoCRM</span>
+          <h1>AI-Agents — умные агенты для автоматизации продаж</h1>
+          <p class="product-hero__desc">
+            AI-агенты общаются с клиентами 24/7 через Telegram, VK, Avito и онлайн-чат на сайте.
+            Автоматически создают лиды и сделки в amoCRM с полной историей переписки и AI-анализом конверсий.
+          </p>
+          <div class="product-hero__price">
+            <span class="product-hero__amount">от 10 &#8381;/диалог</span>
+            <span class="product-hero__period">оплата только за реальные диалоги</span>
+          </div>
+          <div class="product-hero__trial">Настройка за 15 минут</div>
+          <div class="product-hero__actions">
+            <a href="https://www.amocrm.ru/developers/" target="_blank" rel="noopener" class="btn btn--lg">Установить из amoMarket</a>
+            <a href="https://app.aideploy.ru" target="_blank" rel="noopener" class="btn btn--lg" style="background: transparent; color: #2563eb; border: 2px solid #2563eb;">Открыть платформу</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Как это работает -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="section__title fade-in">Как это работает</h2>
+      <p class="section__sub fade-in">От обращения клиента до сделки в CRM — без участия менеджера</p>
+      <div class="how-steps fade-in">
+        <div class="how-step">
+          <div class="how-step__num">1</div>
+          <div class="how-step__title">Клиент пишет</div>
+          <p class="how-step__text">Сообщение приходит из Telegram, VK, Avito или чата на сайте</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step__num">2</div>
+          <div class="how-step__title">AI отвечает</div>
+          <p class="how-step__text">Агент отвечает по промпту: консультирует, квалифицирует, закрывает возражения</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step__num">3</div>
+          <div class="how-step__title">Лид в CRM</div>
+          <p class="how-step__text">При конверсии автоматически создаётся сделка и контакт в amoCRM</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step__num">4</div>
+          <div class="how-step__title">Менеджер закрывает</div>
+          <p class="how-step__text">Менеджер получает готовый лид с историей переписки и анализом</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Каналы -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section__title fade-in">Поддерживаемые каналы</h2>
+      <p class="section__sub fade-in">AI-агенты работают там, где общаются ваши клиенты</p>
+      <div class="channels-grid fade-in">
+        <div class="channel-card">
+          <div class="channel-card__icon" style="background: #e3f2fd;">
+            <svg width="22" height="22" fill="#229ED9" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </div>
+          <div>
+            <div class="channel-card__name">Telegram</div>
+            <div class="channel-card__desc">Бот и личные аккаунты</div>
+          </div>
+        </div>
+        <div class="channel-card">
+          <div class="channel-card__icon" style="background: #e8eaf6;">
+            <svg width="22" height="22" fill="#4C75A3" viewBox="0 0 24 24"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 16.611h-1.744c-.66 0-.862-.525-2.049-1.714-1.033-1.01-1.49-1.135-1.744-1.135-.355 0-.457.102-.457.592v1.575c0 .424-.135.678-1.252.678-1.846 0-3.896-1.12-5.336-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.49.592-.49h1.744c.44 0 .61.203.779.677.864 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.253-1.404 2.15-3.574 2.15-3.574.118-.254.322-.49.762-.49h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .779.186.254.796.779 1.202 1.254.745.847 1.32 1.558 1.473 2.049.17.49-.085.744-.576.744z"/></svg>
+          </div>
+          <div>
+            <div class="channel-card__name">VK</div>
+            <div class="channel-card__desc">Сообщества</div>
+          </div>
+        </div>
+        <div class="channel-card">
+          <div class="channel-card__icon" style="background: #e8f5e9;">
+            <svg width="22" height="22" fill="#00A650" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.46-1.9-.902-1.056-.692-1.653-1.123-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.062 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.015 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </div>
+          <div>
+            <div class="channel-card__name">Avito</div>
+            <div class="channel-card__desc">Мессенджер Avito</div>
+          </div>
+        </div>
+        <div class="channel-card">
+          <div class="channel-card__icon" style="background: #fff3e0;">
+            <svg width="22" height="22" fill="#FF6D00" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+          </div>
+          <div>
+            <div class="channel-card__name">Talk-me</div>
+            <div class="channel-card__desc">Онлайн-чат на сайте</div>
+          </div>
+        </div>
+        <div class="channel-card">
+          <div class="channel-card__icon" style="background: #ede7f6;">
+            <svg width="22" height="22" fill="#7C3AED" viewBox="0 0 24 24"><path d="M21 2H3a2 2 0 00-2 2v12a2 2 0 002 2h7l3 3 3-3h5a2 2 0 002-2V4a2 2 0 00-2-2zm-8 12H7v-2h6v2zm4-4H7V8h10v2z"/></svg>
+          </div>
+          <div>
+            <div class="channel-card__name">Виджет на сайте</div>
+            <div class="channel-card__desc">Встраиваемый чат</div>
+          </div>
+        </div>
+        <div class="channel-card">
+          <div class="channel-card__icon" style="background: #e3f2fd;">
+            <svg width="22" height="22" fill="#2563eb" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#2563eb" fill="none" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="#2563eb" fill="none" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87" stroke="#2563eb" fill="none" stroke-width="2" stroke-linecap="round"/><path d="M16 3.13a4 4 0 010 7.75" stroke="#2563eb" fill="none" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="channel-card__name">amoCRM</div>
+            <div class="channel-card__desc">Лиды и сделки в CRM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Возможности -->
+  <section class="section" style="background: #f8fafc;">
+    <div class="container">
+      <h2 class="section__title fade-in">Возможности</h2>
+      <p class="section__sub fade-in">Полный набор инструментов для AI-автоматизации продаж</p>
+      <div class="features-grid fade-in">
+        <div class="feature-item">
+          <div class="feature-item__icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 014 4v1h2a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V9a2 2 0 012-2h2V6a4 4 0 014-4z"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M9 17h6"/></svg></div>
+          <div class="feature-item__title">AI на базе GPT / Claude</div>
+          <p class="feature-item__text">Выбор модели ИИ: GPT-4o, Claude, DeepSeek. Гибкая настройка промпта под ваш бизнес</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="feature-item__title">Автосоздание лидов</div>
+          <p class="feature-item__text">Сделки и контакты создаются в amoCRM автоматически при конверсии диалога</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div class="feature-item__title">AI-анализ конверсий</div>
+          <p class="feature-item__text">Аналитика диалогов: конверсия, причины отказов, рекомендации по улучшению промпта</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="feature-item__title">Работа 24/7</div>
+          <p class="feature-item__text">AI-агенты отвечают мгновенно в любое время суток — клиенты не ждут</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+          <div class="feature-item__title">История переписки</div>
+          <p class="feature-item__text">Полная история диалога сохраняется в сделке amoCRM — менеджер видит весь контекст</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item__icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg></div>
+          <div class="feature-item__title">Дашборд и аналитика</div>
+          <p class="feature-item__text">Мониторинг диалогов, конверсий и расходов в реальном времени через веб-панель</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Настройка -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section__title fade-in">Настройка за 15 минут</h2>
+      <p class="section__sub fade-in">Установите виджет и запустите AI-агента</p>
+      <div class="setup-steps fade-in" style="max-width: 640px; margin: 0 auto;">
+        <div class="setup-step">
+          <div class="setup-step__content">
+            <h3>Установите виджет из amoMarket</h3>
+            <p>Найдите «AI-Agents» в amoMarket и установите виджет</p>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step__content">
+            <h3>Подключите amoCRM</h3>
+            <p>В настройках виджета нажмите «Подключить amoCRM» и разрешите доступ</p>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step__content">
+            <h3>Создайте AI-агента на платформе</h3>
+            <p>Перейдите на <a href="https://app.aideploy.ru" target="_blank" rel="noopener" style="color: #2563eb;">app.aideploy.ru</a>, создайте агента и настройте промпт</p>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step__content">
+            <h3>Подключите каналы связи</h3>
+            <p>Добавьте Telegram-бота, VK-сообщество, Avito или онлайн-чат</p>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step__content">
+            <h3>Укажите ID организации в виджете</h3>
+            <p>Скопируйте ID организации из панели AIDeploy и вставьте в настройках виджета amoCRM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Тарифы -->
+  <section class="section" style="background: #f8fafc;">
+    <div class="container">
+      <h2 class="section__title fade-in">Тариф</h2>
+      <p class="section__sub fade-in">Оплата только за реальные диалоги с клиентами</p>
+      <div class="pricing-card fade-in">
+        <div class="pricing-card__price">10–20 &#8381;</div>
+        <div class="pricing-card__period">за диалог</div>
+        <div class="pricing-card__trial">В 3–5 раз дешевле живого оператора</div>
+        <div class="pricing-card__features">
+          <div class="pricing-card__feature">Неограниченное количество агентов</div>
+          <div class="pricing-card__feature">Все каналы связи включены</div>
+          <div class="pricing-card__feature">Интеграция с amoCRM</div>
+          <div class="pricing-card__feature">Выбор модели AI (GPT-4o, Claude, DeepSeek)</div>
+          <div class="pricing-card__feature">Аналитика и дашборд</div>
+          <div class="pricing-card__feature">История диалогов в CRM</div>
+          <div class="pricing-card__feature">AI-анализ конверсий</div>
+          <div class="pricing-card__feature">Техническая поддержка</div>
+        </div>
+        <a href="https://app.aideploy.ru" target="_blank" rel="noopener" class="btn btn--lg" style="width: 100%;">Попробовать бесплатно</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta__card fade-in">
+        <h2 class="cta__title">Есть вопросы?</h2>
+        <p class="cta__text">Поможем настроить AI-агента и подключить к вашей amoCRM.</p>
+        <div class="contact-info">
+          <a href="mailto:info@friendadmin.ru"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@friendadmin.ru</a>
+          <a href="https://t.me/friend_admin" target="_blank" rel="noopener"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> @friend_admin</a>
+        </div>
+        <a href="/kontakty/" class="btn btn--lg btn--white" style="margin-top: 20px;">Связаться</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><div class="footer__logo"><img src="/img/favicon.svg" alt="FriendAdmin" width="28" height="28"><span>FriendAdmin</span></div><p class="footer__desc">Веб-студия полного цикла. Создаём сайты, внедряем CRM, продвигаем бизнес в интернете с 2014 года.</p></div>
+        <div><div class="footer__heading">Услуги</div><div class="footer__links"><a href="/razrabotka-sajtov/">Разработка сайтов</a><a href="/crm-sistemy/">CRM-системы</a><a href="/seo-prodvizhenie/">SEO-продвижение</a><a href="/it-podderzhka/">IT-поддержка</a></div></div>
+        <div><div class="footer__heading">Компания</div><div class="footer__links"><a href="/o-kompanii/">О компании</a><a href="/portfolio/">Портфолио</a><a href="/kontakty/">Контакты</a><a href="/politika-konfidentsialnosti/">Политика конфиденциальности</a></div></div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__copy">&copy; 2014–2026 FriendAdmin. Все права защищены.</div>
+        <div class="footer__socials">
+          <a href="https://t.me/friend_admin" target="_blank" rel="noopener" aria-label="Telegram"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js?v=2"></script>
+</body>
+</html>
