@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Интернет-магазин уровня маркетплейса — без комиссий | FriendAdmin</title>
-  <meta name="description" content="Создаём интернет-магазины с функционалом маркетплейса: мобильное приложение, AI-поиск, персональные рекомендации, 1000+ ПВЗ, оплата в 1 клик. Без комиссий и зависимости от площадок.">
+  <title>Разработка интернет-магазина под ключ — от 150 000 ₽ | FriendAdmin</title>
+  <meta name="description" content="Создание интернет-магазина под ключ: мобильное приложение, AI-поиск, оплата онлайн, доставка СДЭК/Boxberry, интеграция 1С. Расчёт за 1 день, запуск от 4 недель.">
   <meta name="keywords" content="создание интернет-магазина, интернет-магазин под ключ, разработка интернет-магазина, e-commerce">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://friendadmin.ru/razrabotka-sajtov/internet-magazin/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Интернет-магазин уровня маркетплейса — без комиссий | FriendAdmin">
-  <meta property="og:description" content="Все фишки Wildberries и Ozon — в вашем собственном магазине. Мобильное приложение, AI-поиск, персональные рекомендации, 1000+ ПВЗ.">
+  <meta property="og:title" content="Разработка интернет-магазина под ключ — от 150 000 ₽ | FriendAdmin">
+  <meta property="og:description" content="Создание интернет-магазина: мобильное приложение, AI-поиск, оплата, доставка, 1С. Расчёт за 1 день, запуск от 4 недель.">
   <meta property="og:url" content="https://friendadmin.ru/razrabotka-sajtov/internet-magazin/">
   <meta property="og:site_name" content="FriendAdmin">
   <meta property="og:locale" content="ru_RU">
@@ -327,6 +327,122 @@
       font-weight: 600;
     }
 
+    /* Hero inline form */
+    .hero-form {
+      max-width: 580px;
+      margin: 32px auto 0;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 28px 32px;
+      backdrop-filter: blur(10px);
+    }
+    .hero-form__title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .hero-form__row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .hero-form__input {
+      flex: 1;
+      min-width: 140px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .hero-form__input::placeholder { color: #64748b; }
+    .hero-form__input:focus {
+      border-color: #60a5fa;
+      box-shadow: 0 0 0 3px rgba(96,165,250,0.15);
+    }
+    .hero-form__btn {
+      white-space: nowrap;
+      padding: 14px 28px;
+    }
+    .hero-form__status {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+    .hero-form__status--ok { color: #34d399; }
+    .hero-form__status--err { color: #f87171; }
+    .hero-form__or {
+      text-align: center;
+      color: #64748b;
+      font-size: 0.85rem;
+      margin: 16px 0 10px;
+    }
+    .hero-form__contacts {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hero-form__contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #fff;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .hero-form__contact:hover { transform: translateY(-2px); opacity: 0.9; text-decoration: none; }
+    .hero-form__contact--tg { background: #2AABEE; }
+    .hero-form__contact--wa { background: #25D366; }
+    .hero-form__contact--ph { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); }
+
+    /* Sticky mobile CTA */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: rgba(15,23,42,0.95);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 12px 16px;
+      gap: 10px;
+    }
+    .sticky-cta__phone {
+      flex: 0 0 auto;
+      padding: 12px 20px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+    .sticky-cta__phone:hover { text-decoration: none; }
+    .sticky-cta__btn {
+      flex: 1;
+      padding: 12px 20px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2563eb, #06b6d4);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+    .sticky-cta__btn:hover { text-decoration: none; }
+
     @media (max-width: 768px) {
       .lp-hero { padding: 100px 0 60px; }
       .lp-hero__title { font-size: 1.8rem; }
@@ -336,6 +452,11 @@
       .grid--3 { grid-template-columns: 1fr; }
       .grid--2 { grid-template-columns: 1fr; }
       .quiz { padding: 32px 20px; }
+      .hero-form { padding: 20px 16px; }
+      .hero-form__row { flex-direction: column; }
+      .hero-form__input { min-width: unset; }
+      .sticky-cta { display: flex; }
+      body { padding-bottom: 70px; }
     }
   </style>
 </head>
@@ -360,21 +481,42 @@
     <!-- HERO -->
     <section class="lp-hero">
       <div class="container">
-        <div class="lp-hero__badge">Функционал маркетплейса — ваши правила</div>
-        <h1 class="lp-hero__title">Ваш интернет-магазин <span>с функционалом Wildberries</span></h1>
-        <p class="lp-hero__sub">Мобильное приложение, AI-поиск, персональные рекомендации, 1000+ пунктов выдачи, оплата в 1 клик — всё как у крупных маркетплейсов, но без комиссий, которые на маркетплейсах достигают 50% и выше</p>
-        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-          <a href="#shop-form" class="btn btn--lg">Рассчитать стоимость</a>
-          <a href="tel:+79611048319" class="btn btn--lg" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2)">+7 (961) 104-83-19</a>
+        <div class="lp-hero__badge">Запуск от 4 недель</div>
+        <h1 class="lp-hero__title">Разработка <span>интернет-магазина</span> под ключ</h1>
+        <p class="lp-hero__sub">Мобильное приложение, AI-поиск, онлайн-оплата, доставка через 1000+ ПВЗ, интеграция с 1С — всё включено. Без скрытых платежей.</p>
+
+        <!-- Inline lead form in hero -->
+        <div class="hero-form" id="hero-form">
+          <div class="hero-form__title">Получите расчёт стоимости за 5 минут</div>
+          <form id="hero-lead-form" class="hero-form__row">
+            <div style="position:absolute;left:-9999px"><input type="text" name="website_h" tabindex="-1" autocomplete="off"></div>
+            <input class="hero-form__input" type="text" name="hero_name" placeholder="Ваше имя" required>
+            <input class="hero-form__input" type="tel" name="hero_phone" placeholder="+7 (___) ___-__-__" value="+7 " required>
+            <button type="submit" class="btn btn--lg hero-form__btn">Получить расчёт</button>
+          </form>
+          <div class="hero-form__status" id="hero-form-status"></div>
+          <div class="hero-form__or">или напишите нам:</div>
+          <div class="hero-form__contacts">
+            <a href="https://t.me/friend_admin" target="_blank" class="hero-form__contact hero-form__contact--tg">Telegram</a>
+            <a href="https://wa.me/79611048319" target="_blank" class="hero-form__contact hero-form__contact--wa">WhatsApp</a>
+            <a href="tel:+79611048319" class="hero-form__contact hero-form__contact--ph">+7 (961) 104-83-19</a>
+          </div>
         </div>
+
         <div class="lp-hero__checks">
+          <span>От 150 000 ₽</span>
           <span>Мобильное приложение</span>
-          <span>До 100 000 товаров</span>
-          <span>AI-консультант 24/7</span>
-          <span>Умный поиск</span>
+          <span>Оплата и доставка</span>
+          <span>Интеграция 1С</span>
         </div>
       </div>
     </section>
+
+    <!-- Sticky mobile CTA -->
+    <div class="sticky-cta" id="sticky-cta">
+      <a href="tel:+79611048319" class="sticky-cta__phone">Позвонить</a>
+      <a href="#hero-form" class="sticky-cta__btn">Получить расчёт</a>
+    </div>
 
     <!-- PAIN POINTS -->
     <section class="section">
@@ -859,6 +1001,103 @@
       btn.textContent = 'Получить расчёт стоимости';
     });
   });
+})();
+</script>
+<script>
+(function(){
+  // Hero form phone mask
+  var heroPhone = document.querySelector('[name="hero_phone"]');
+  if (heroPhone) {
+    function fmtPh(val) {
+      var d = val.replace(/\D/g, '');
+      if (d.length === 0) return '+7 ';
+      if (d[0] === '8' || d[0] === '7') d = d.substring(1);
+      var f = '+7 ';
+      if (d.length > 0) f += '(' + d.substring(0, 3);
+      if (d.length >= 3) f += ') ' + d.substring(3, 6);
+      if (d.length >= 6) f += '-' + d.substring(6, 8);
+      if (d.length >= 8) f += '-' + d.substring(8, 10);
+      return f;
+    }
+    heroPhone.addEventListener('input', function() {
+      var p = this.selectionStart, ol = this.value.length;
+      this.value = fmtPh(this.value);
+      var np = p + (this.value.length - ol);
+      if (np < 4) np = 4;
+      this.setSelectionRange(np, np);
+    });
+    heroPhone.addEventListener('focus', function() {
+      if (!this.value || this.value === '+7') this.value = '+7 ';
+      this.setSelectionRange(this.value.length, this.value.length);
+    });
+    heroPhone.addEventListener('keydown', function(e) {
+      if (e.key === 'Backspace' && this.value.length <= 4) e.preventDefault();
+    });
+  }
+
+  // Hero form submit
+  var heroForm = document.getElementById('hero-lead-form');
+  if (heroForm) {
+    heroForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var hp = heroForm.querySelector('[name="website_h"]');
+      if (hp && hp.value) return;
+      var name = heroForm.querySelector('[name="hero_name"]').value.trim();
+      var phone = heroForm.querySelector('[name="hero_phone"]').value.trim();
+      var statusEl = document.getElementById('hero-form-status');
+      if (!name || !phone || phone.replace(/\D/g,'').length < 11) {
+        statusEl.textContent = 'Заполните имя и телефон';
+        statusEl.className = 'hero-form__status hero-form__status--err';
+        return;
+      }
+      var btn = heroForm.querySelector('button');
+      btn.disabled = true;
+      btn.textContent = 'Отправка...';
+      fetch('https://app.aideploy.ru/api/landing-lead', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          site: 'friendadmin',
+          name: name,
+          phone: phone,
+          contact: '',
+          service: 'Интернет-магазин (hero-форма)',
+          message: 'Быстрая заявка из первого экрана'
+        })
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        if (data.success) {
+          statusEl.textContent = 'Спасибо! Свяжемся с вами в ближайшее время.';
+          statusEl.className = 'hero-form__status hero-form__status--ok';
+          heroForm.reset();
+          if (typeof ym === 'function') ym(95899715, 'reachGoal', 'form_submit');
+          if (typeof gtag === 'function') gtag('event', 'form_submit', {event_category: 'lead'});
+        } else {
+          statusEl.textContent = 'Ошибка. Позвоните нам: +7 (961) 104-83-19';
+          statusEl.className = 'hero-form__status hero-form__status--err';
+        }
+      })
+      .catch(function(){
+        statusEl.textContent = 'Ошибка сети. Позвоните: +7 (961) 104-83-19';
+        statusEl.className = 'hero-form__status hero-form__status--err';
+      })
+      .finally(function(){
+        btn.disabled = false;
+        btn.textContent = 'Получить расчёт';
+      });
+    });
+  }
+
+  // Sticky CTA: show after scrolling past hero form
+  var stickyCta = document.getElementById('sticky-cta');
+  var heroFormEl = document.getElementById('hero-form');
+  if (stickyCta && heroFormEl && window.innerWidth <= 768) {
+    window.addEventListener('scroll', function() {
+      var rect = heroFormEl.getBoundingClientRect();
+      stickyCta.style.display = (rect.bottom < 0) ? 'flex' : 'none';
+    }, {passive: true});
+  }
 })();
 </script>
 <script src="https://app.aideploy.ru/widget.js" data-agent="007e67f2-d9fd-494c-ac78-1156c5567682"></script>
