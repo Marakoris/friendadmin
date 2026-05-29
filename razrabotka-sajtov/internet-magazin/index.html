@@ -985,7 +985,7 @@
         document.querySelector('.quiz__sub').textContent = 'Мы подготовим расчёт и свяжемся с вами в ближайшее время.';
         bar.style.width = '100%';
         form.style.display = 'none';
-        if (typeof ym === 'function') ym(95899715, 'reachGoal', 'form_submit');
+        if (typeof ym === 'function') { ym(95899715, 'reachGoal', 'form_submit'); ym(95899715, 'hit', '/goal/lead-submitted'); }
         if (typeof gtag === 'function') gtag('event', 'form_submit', {event_category: 'lead'});
       } else {
         statusEl.textContent = 'Ошибка. Попробуйте позже или позвоните нам.';
