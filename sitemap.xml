@@ -203,12 +203,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://friendadmin.ru/razrabotka-internet-magazina/</loc>
-    <lastmod>2026-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- razrabotka-internet-magazina removed: page with redirect -->
   <url>
     <loc>https://friendadmin.ru/razrabotka-sajtov/avtomatizaciya-billinga/</loc>
     <lastmod>2026-06-02</lastmod>
@@ -221,10 +216,5 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://friendadmin.ru/seo/</loc>
-    <lastmod>2026-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- seo/ removed: page with redirect -->
 </urlset>
