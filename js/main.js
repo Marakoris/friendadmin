@@ -3,6 +3,7 @@
 const analytics = {
   track(event, params) {
     if (typeof gtag === 'function') gtag('event', event, params);
+    if (typeof ym === 'function') ym(95899715, 'reachGoal', event, params);
   }
 };
 
