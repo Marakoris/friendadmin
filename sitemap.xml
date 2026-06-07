@@ -55,7 +55,7 @@
   <url><loc>https://friendadmin.ru/blog/avtomatizaciya-billinga-bot-vystavlyaet-scheta/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/avtomatizatsija-otvetov-na-zvonki/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/prodvizhenie-v-gugl/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://friendadmin.ru/blog/ai-sekretar/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://friendadmin.ru/blog/ai-sekretar/</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://friendadmin.ru/blog/ai-dlja-avtomatizatsii-biznes-protsessov/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/golosovoj-pomoschnik-dlja-biznesa/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://friendadmin.ru/blog/zakazat-seo-audit-sajta/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -214,9 +214,9 @@
   </url>
   <url>
     <loc>https://friendadmin.ru/razrabotka-sajtov/avtomatizaciya-billinga/</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://friendadmin.ru/razrabotka-sajtov/avtomatizaciya-billinga/demo/</loc>
